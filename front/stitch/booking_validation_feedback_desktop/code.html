@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Art of Presence | Secure Your Ritual</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2dd",
+                        "on-error": "#ffffff",
+                        "tertiary": "#382c1f",
+                        "on-surface-variant": "#424841",
+                        "on-secondary-fixed": "#241a06",
+                        "background": "#fcf9f4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-container-highest": "#e5e2dd",
+                        "tertiary-container": "#4f4234",
+                        "secondary-container": "#f2ddbd",
+                        "secondary-fixed": "#f5e0c0",
+                        "primary-fixed": "#c8ecc8",
+                        "surface-bright": "#fcf9f4",
+                        "on-background": "#1c1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#706047",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#53452d",
+                        "on-tertiary-fixed": "#241a0e",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "surface-tint": "#47664a",
+                        "outline": "#737971",
+                        "surface-container-low": "#f6f3ee",
+                        "primary": "#17341c",
+                        "outline-variant": "#c2c8bf",
+                        "inverse-primary": "#adcfad",
+                        "on-surface": "#1c1c19",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "primary-container": "#2d4b31",
+                        "inverse-surface": "#31302d",
+                        "on-tertiary-container": "#c1ae9c",
+                        "surface-container": "#f0ede8",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe8e3",
+                        "error-container": "#ffdad6",
+                        "secondary": "#6c5c43",
+                        "on-primary-fixed": "#03210b",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "surface": "#fcf9f4",
+                        "on-primary-container": "#98ba99",
+                        "inverse-on-surface": "#f3f0eb"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ease-out-expo { transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 backdrop-blur-xl">
+<nav class="flex justify-between items-center px-6 md:px-10 py-6 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold text-primary tracking-tighter font-headline">
+                The Art of Presence
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-on-background/60 hover:text-primary transition-colors duration-500 font-headline tracking-tight" href="#">Experience</a>
+<a class="text-on-background/60 hover:text-primary transition-colors duration-500 font-headline tracking-tight" href="#">Origins</a>
+<a class="text-on-background/60 hover:text-primary transition-colors duration-500 font-headline tracking-tight" href="#">Rituals</a>
+<a class="text-primary font-semibold border-b border-primary/20 font-headline tracking-tight" href="#">Admin</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-10 max-w-[1440px] mx-auto relative min-h-screen">
+<div class="grain-overlay absolute inset-0 z-0"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Form Section (Asymmetric 7/12) -->
+<section class="lg:col-span-7">
+<header class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl text-primary mb-4 leading-tight tracking-tight">Guest Information</h1>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed max-w-xl">
+                        To prepare the space for your arrival, please provide your contact details. Each session is carefully paced to ensure a deep connection with the leaf.
+                    </p>
+</header>
+<form class="space-y-10">
+<!-- Name Field (Valid State Example) -->
+<div class="group">
+<label class="block text-xs uppercase tracking-[0.15em] font-label text-secondary mb-3" for="full_name">Full Name</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-primary-fixed-dim focus:ring-0 focus:border-primary-container p-4 rounded-lg font-body text-on-surface transition-all duration-300" id="full_name" placeholder="E.g. Mei Ling" type="text" value="Julianne Thorne"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Email Field (Error State Example) -->
+<div class="group">
+<label class="block text-xs uppercase tracking-[0.15em] font-label text-secondary mb-3" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-error/30 focus:ring-0 focus:border-error p-4 rounded-lg font-body text-on-surface transition-all duration-300" id="email" placeholder="name@domain.com" type="email" value="julianne.thorne@"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-error">
+<span class="material-symbols-outlined text-xl" data-icon="error" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+</div>
+<p class="mt-2 text-sm text-error font-body italic flex items-center gap-1">
+                            Please enter a valid email address
+                        </p>
+</div>
+<!-- Phone Field (Required State Example) -->
+<div class="group">
+<label class="block text-xs uppercase tracking-[0.15em] font-label text-secondary mb-3" for="phone">Phone Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant/20 focus:ring-0 focus:border-primary-container p-4 rounded-lg font-body text-on-surface transition-all duration-300" id="phone" placeholder="+64 21 000 0000" type="tel"/>
+</div>
+<p class="mt-2 text-sm text-error/60 font-body italic">
+                            This field is required
+                        </p>
+</div>
+<!-- Dietary/Special Requests (Resting State) -->
+<div class="group">
+<label class="block text-xs uppercase tracking-[0.15em] font-label text-secondary mb-3" for="notes">Ritual Preferences (Optional)</label>
+<textarea class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant/20 focus:ring-0 focus:border-primary-container p-4 rounded-lg font-body text-on-surface transition-all duration-300 resize-none" id="notes" placeholder="Please mention any dietary requirements or preferences for your session..." rows="4"></textarea>
+</div>
+<div class="pt-6">
+<button class="group relative inline-flex items-center gap-4 bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-full font-label font-bold tracking-wide shadow-lg hover:shadow-primary/20 transition-all duration-500 active:scale-95" type="submit">
+<span>Proceed to Confirmation</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Right: Reservation Summary Sidebar (Asymmetric 5/12) -->
+<aside class="lg:col-span-5 relative">
+<div class="sticky top-32 space-y-8">
+<!-- Summary Card -->
+<div class="bg-surface-container-high p-8 md:p-12 rounded-xl relative overflow-hidden">
+<div class="grain-overlay absolute inset-0"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-2xl text-primary mb-8 border-b border-primary/10 pb-4">Reservation Summary</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1" data-icon="spa">spa</span>
+<div>
+<p class="text-xs uppercase tracking-widest font-label text-secondary mb-1">Ritual</p>
+<p class="font-headline text-lg text-primary">Mountain Mist Oolong Session</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1" data-icon="calendar_today">calendar_today</span>
+<div>
+<p class="text-xs uppercase tracking-widest font-label text-secondary mb-1">Date &amp; Time</p>
+<p class="font-headline text-lg text-primary">Friday, November 22nd <br/> 4:00 PM — 5:30 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary pt-1" data-icon="group">group</span>
+<div>
+<p class="text-xs uppercase tracking-widest font-label text-secondary mb-1">Guests</p>
+<p class="font-headline text-lg text-primary">2 Travelers</p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-primary/10">
+<div class="flex justify-between items-center text-primary">
+<span class="font-label uppercase tracking-widest text-xs">Total Investment</span>
+<span class="font-headline text-2xl">$185.00</span>
+</div>
+<p class="text-[10px] text-on-surface-variant/60 font-label mt-2 text-right">INCLUDES SERVICE AND TEA TASTING</p>
+</div>
+</div>
+</div>
+<!-- Decorative Quote -->
+<div class="px-8 italic text-on-surface-variant/70 font-headline text-sm leading-relaxed text-center">
+                        "The tea ceremony is a time to rediscover the soul through the quiet interaction between the leaf and the water."
+                    </div>
+<!-- Image Accent -->
+<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm relative">
+<img alt="Traditional Taiwanese tea set on a dark wood table" class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-[2000ms]" data-alt="Traditional Taiwanese tea set on a dark wood table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA05iLLqEuiM72LTrjKp1wrIDFtIyFdiik1jxN-JrJTLT9HyO5Plpy-2XYkmWZskaEn0ETkGEfZ4PoV5V8u4IsT9jAKrraWLC9bhyyiOGjTryQZmgQ3VPItgdVf1A19yGO9rCj7HNGKCBtH00KQzsnjztnGyS_rPTGN1aniOX1Ld5bNztwzJenLt-qaorSgkLc-qrvPzLDdyIRW0FX4n3LFwX0D33_-K-E1CPwKv6TM4mVIzcj_oG6Y5seyDROp9WDiqaGwM4Tju0DZ"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-surface-container-low border-t border-primary/5">
+<div class="flex flex-col items-center gap-10 px-8 max-w-[1440px] mx-auto">
+<div class="text-primary font-headline font-bold text-lg tracking-widest uppercase">The Art of Presence</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/40 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/40 hover:text-primary transition-colors" href="#">Ritual Guide</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/40 hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="text-on-surface/30 font-label text-[10px] uppercase tracking-[0.25em] text-center">
+                © 2024 The Art of Presence. A New Zealand &amp; Taiwan Collaboration.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "name": "moso-tea-workspace",
+  "private": true,
+  "workspaces": [
+    "front",
+    "admin"
+  ],
+  "scripts": {
+    "dev:front": "npm run dev -w front",
+    "dev:admin": "npm run dev -w admin",
+    "build:front": "npm run build -w front",
+    "build:admin": "npm run build -w admin"
+  }
+}

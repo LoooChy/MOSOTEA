@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Art of Presence - Preparing Your Ritual</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#c1ae9c",
+                        "on-secondary-fixed-variant": "#53452d",
+                        "on-background": "#1c1c19",
+                        "inverse-surface": "#31302d",
+                        "tertiary": "#382c1f",
+                        "surface-container-high": "#ebe8e3",
+                        "inverse-on-surface": "#f3f0eb",
+                        "surface-variant": "#e5e2dd",
+                        "surface-bright": "#fcf9f4",
+                        "background": "#fcf9f4",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-container": "#f0ede8",
+                        "surface": "#fcf9f4",
+                        "on-surface": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#adcfad",
+                        "secondary-container": "#f2ddbd",
+                        "on-tertiary-fixed": "#241a0e",
+                        "on-secondary-fixed": "#241a06",
+                        "inverse-primary": "#adcfad",
+                        "tertiary-container": "#4f4234",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "secondary-fixed": "#f5e0c0",
+                        "primary-fixed": "#c8ecc8",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "primary": "#17341c",
+                        "secondary": "#6c5c43",
+                        "primary-container": "#2d4b31",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "outline-variant": "#c2c8bf",
+                        "on-secondary-container": "#706047",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#03210b",
+                        "outline": "#737971",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#47664a",
+                        "surface-dim": "#dcdad5",
+                        "on-surface-variant": "#424841",
+                        "on-primary-container": "#98ba99",
+                        "tertiary-fixed": "#f4dfcb",
+                        "error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-expo {
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        /* Custom Zen Pulse for the loader */
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { opacity: 0.3; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .animate-ripple {
+            animation: ripple 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- Underlying Page Mockup (Blurred) -->
+<div class="fixed inset-0 z-0 overflow-hidden filter blur-sm">
+<!-- TopNavBar Mockup -->
+<header class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto bg-[#fcf9f4]/80">
+<div class="text-2xl font-serif italic text-[#17341c] tracking-tighter">The Art of Presence</div>
+<nav class="hidden md:flex gap-8 text-[#1c1c19]/60 font-medium">
+<span>Collections</span>
+<span>Ceremony</span>
+<span class="text-[#17341c] border-b border-[#17341c]/20">Our Story</span>
+<span>Journal</span>
+</nav>
+<div class="flex gap-6">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="material-symbols-outlined">person</span>
+</div>
+</header>
+<!-- Content Mockup -->
+<main class="max-w-[1440px] mx-auto px-12 pt-24 grid grid-cols-12 gap-12">
+<div class="col-span-12 md:col-span-7 aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover opacity-60" data-alt="Authentic Taiwanese tea set on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY48n8e8MTJnI_Nw86kRWJq7cADQwz8BYsG5Jp-fYjnO_osmSrPUxQOuQqAhqHK4WmC7OmTORt_3XZa_bEvp7MBKiF6EeAyJkBt5TM3r7eInX7mW-BVrGMi8b0IVrQ1U151PFkJMSfIWf-jFBiv9Lvsb55zZK5yxAzWBN5o0sO3AGPG3tTFuil5h9HOqW4i7ZrmArLQb1wk-ukFU1H0ZpitMy8gEclx5FEsetBCOGfqo4mNluiK_eSCdVSKPwtdkQlBYV9mkRGD_yy"/>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center space-y-8">
+<h1 class="font-headline text-5xl leading-tight text-primary">A Journey through Alishan</h1>
+<p class="text-lg leading-relaxed text-on-surface-variant">Deep in the mist-shrouded peaks, the high-mountain oolong begins its slow oxidation. A ritual of patience, a gift of time.</p>
+<div class="bg-surface-container rounded-xl p-8 space-y-6">
+<div class="h-12 bg-surface-container-highest rounded-md w-full"></div>
+<div class="h-12 bg-surface-container-highest rounded-md w-3/4"></div>
+<div class="h-14 bg-primary rounded-full w-full"></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Loading Overlay -->
+<div class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-surface/60 backdrop-blur-xl">
+<!-- Zen Animation: Concentric Ripples -->
+<div class="relative flex items-center justify-center w-64 h-64">
+<!-- Ripple 1 -->
+<div class="absolute w-32 h-32 border border-primary/20 rounded-full animate-ripple"></div>
+<!-- Ripple 2 -->
+<div class="absolute w-32 h-32 border border-primary/20 rounded-full animate-ripple" style="animation-delay: 1.3s;"></div>
+<!-- Ripple 3 -->
+<div class="absolute w-32 h-32 border border-primary/20 rounded-full animate-ripple" style="animation-delay: 2.6s;"></div>
+<!-- Center Icon: Delicate Tea Leaf -->
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl opacity-40 transition-opacity duration-1000" style="font-variation-settings: 'wght' 100;">
+                    eco
+                </span>
+<!-- Subtle Grain Texture on Center Element -->
+<div class="absolute inset-0 pointer-events-none mix-blend-multiply opacity-[0.03] rounded-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzCOzB83tLG0jmv6xxqEg5qFKXrA-LSrF8MQiBjaLnQH7soONzVkgzfwoNjMRs6GPFCFcpLrMPSjNG0gxI2JjPSzKyofscbP_EDMGGw11lD-2F-gc1lpxUYPPO2iaM3sPD2C7L1UwBFkc-3PY09msDyMmWRXL9vMIlvKYSddQv2kCzMYbWedb6VLVOLelfrAEdQhCMdc0JVBTpTAD9wmFw1_b9c-vSohDXA6aPt68XuWGcTMtFim219KMp-uHL_9ODeEiC4B-CyVNf');"></div>
+</div>
+</div>
+<!-- Loading Text -->
+<div class="mt-8 text-center space-y-3 px-6">
+<h2 class="font-headline text-2xl text-primary tracking-tight">Preparing your ritual...</h2>
+<p class="font-body text-sm tracking-widest uppercase text-on-surface/40 max-w-xs mx-auto">
+                Finding the balance between water and leaf
+            </p>
+</div>
+<!-- Subtle Branding Anchor -->
+<div class="absolute bottom-12 flex flex-col items-center space-y-2 opacity-30">
+<span class="font-headline italic text-lg text-primary tracking-tighter">The Art of Presence</span>
+<div class="h-px w-8 bg-primary/20"></div>
+</div>
+</div>
+<!-- Background Grain Overlay for the whole screen -->
+<div class="fixed inset-0 pointer-events-none z-[110] opacity-[0.02] mix-blend-overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCExbwZ92NG4TybakMzBQJhdntBWfo9QkX6zO2CJmIO5toqAQSkBSPOgXx5gznhmAJcxyNrAqwXW8pYI3uamkMXuD5Esko3nOSRodvNKgiVp5sfzSdO1QI_rIUF0M1JvGRgNS73ddkb4HCHUOUVPwekMI0sekCnYJ_uLjDQsX-e2gYzdEdgt7T2F-AMHfwh5niWbTz9GPBGaahsPY-qN8R6qLBLM06Eyldn4F-plJ_kvzz05GlGVkzwY2c4JaBNsfx4fcxhLGsuceIU');"></div>
+</body></html>

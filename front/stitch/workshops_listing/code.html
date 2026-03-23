@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#6c5c43",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e5e2dd",
+              "surface-variant": "#e5e2dd",
+              "on-error": "#ffffff",
+              "outline-variant": "#c2c8bf",
+              "on-primary-container": "#98ba99",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#f2ddbd",
+              "on-secondary-container": "#706047",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#03210b",
+              "tertiary-fixed": "#f4dfcb",
+              "on-tertiary-fixed": "#241a0e",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#2f4e33",
+              "secondary-fixed": "#f5e0c0",
+              "inverse-surface": "#31302d",
+              "on-secondary-fixed-variant": "#53452d",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fcf9f4",
+              "tertiary": "#382c1f",
+              "surface-container-high": "#ebe8e3",
+              "outline": "#737971",
+              "surface-container": "#f0ede8",
+              "tertiary-container": "#4f4234",
+              "surface-tint": "#47664a",
+              "on-background": "#1c1c19",
+              "inverse-primary": "#adcfad",
+              "inverse-on-surface": "#f3f0eb",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "primary": "#17341c",
+              "primary-container": "#2d4b31",
+              "primary-fixed-dim": "#adcfad",
+              "surface-dim": "#dcdad5",
+              "on-tertiary-fixed-variant": "#524436",
+              "surface-container-low": "#f6f3ee",
+              "on-secondary-fixed": "#241a06",
+              "surface-bright": "#fcf9f4",
+              "on-tertiary-container": "#c1ae9c",
+              "primary-fixed": "#c8ecc8",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#d8c4a5",
+              "on-surface": "#1c1c19",
+              "on-error-container": "#93000a",
+              "background": "#fcf9f4",
+              "on-surface-variant": "#424841"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1)
+    }
+.bg-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDxCNLpNDJFChZFvmjqKpMoVaWyf3dDtaf-7aNh3sWTllfLiXTQ-J7JHD7Y4q70_4OV9xG2UBNtFZ75kGyzpMi9I1dftUFIybLFfLKa89-6ObIbg9592Gpnyroez5uXmt3PqnfmsqHxkitbY54EbjPOr6dKD5NKWkfmoZGNXO54hKimKCiYoQ4Os4Y3tOjNj_SmofigSRyP1YvIfFZpAhzRgjUQoab-1k3iuGmA_6aDPqW_3FZJvthmFGLXj2MzXxz9t1bDUdrLcQnt);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-6 max-w-[1440px] left-1/2 -translate-x-1/2 z-50 bg-[#fcf9f4]/80 backdrop-blur-xl shadow-[0_40px_40px_rgba(28,28,25,0.06)]">
+<div class="text-2xl font-serif italic text-[#17341c]">The Art of Presence</div>
+<nav class="hidden md:flex gap-8 items-center font-['Noto_Serif'] tracking-tight text-sm uppercase">
+<a class="text-[#1c1c19]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#">About</a>
+<a class="text-[#17341c] border-b-2 border-[#17341c] pb-1" href="#">Workshops</a>
+<a class="text-[#1c1c19]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#">Location</a>
+<a class="text-[#1c1c19]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#">FAQ</a>
+</nav>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full text-sm font-medium tracking-wide uppercase transition-all duration-700 active:opacity-80 active:scale-95 shadow-lg">
+            Book Now
+        </button>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-6 md:px-24 mb-24 max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row gap-12 items-end">
+<div class="md:w-3/5">
+<span class="text-secondary font-medium tracking-[0.2em] uppercase text-xs mb-4 block">Shared Discovery</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-primary -ml-1 leading-tight mb-8">
+                        Our Workshops &amp; <br/><i class="font-serif italic font-normal">Experiences</i>
+</h1>
+</div>
+<div class="md:w-2/5 pb-2">
+<p class="text-on-surface-variant leading-relaxed text-lg border-l-2 border-primary/10 pl-8">
+                        We believe in the intimacy of the steep. All sessions are curated for small groups of <span class="text-primary font-semibold">maximum 6 participants</span>, ensuring a focused and healing environment. Each curated experience is offered at <span class="text-primary font-semibold">$50 per person</span>.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Workshops Grid (Asymmetric Layout) -->
+<div class="space-y-32 px-6 md:px-24 max-w-[1440px] mx-auto">
+<!-- Workshop 1: Authentic Tea Ceremony -->
+<section class="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105" data-alt="Traditional Taiwanese tea ceremony setup with ceramic ware and steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUNISWBJeMG4CyXBhg7yVwzrMo1CYDfp5tIr8IabGp3EhC6WC3kO8ED7-bp7KYEh76qEZZMURI4qT6xPtgC9wUP5bel13HEjKf69Rmc-ksvusIRgNYN39XfWKrBCE1JcgEGnfJuTfidXCmGjIkly1Rxp11d4NEZyGdt3ieHylGzbvKzZ-BjZ3ftLAPzlT9kJnwXimBJFDEIzW2MKwXPT4qe0SRkT92xEY3D113ROCXNXl22S-5TKoq3Plo3TrU8bo7mOEJNdDXAN-w"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary-container rounded-full flex items-center justify-center p-6 text-center shadow-xl">
+<span class="font-headline italic text-on-secondary-container text-lg">Culture &amp; Immersion</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline text-4xl text-primary font-bold">Authentic Tea Ceremony</h2>
+<span class="text-2xl font-serif text-secondary">$50</span>
+</div>
+<div class="flex gap-4 text-sm text-on-surface-variant uppercase tracking-widest font-medium">
+<span>90 Minutes</span>
+<span>•</span>
+<span>Max 6 People</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Immerse yourself in the quiet elegance of Taiwanese culture. Observe a full choreographed ceremony performed by our masters, delving deep into the philosophy of presence and the historical lineage of Oolong.
+                    </p>
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<h4 class="font-bold text-primary uppercase text-xs tracking-widest">What's Included</h4>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+                                Rare Oolong Tasting
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="history">history</span>
+                                Cultural History Lecture
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="self_improvement">self_improvement</span>
+                                Guided Meditation
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="restaurant">restaurant</span>
+                                Traditional Tea Snacks
+                            </li>
+</ul>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-12 py-4 rounded-full font-medium tracking-wide uppercase transition-all duration-500 hover:shadow-[0_20px_40px_rgba(23,52,28,0.2)]">
+                        Book This Experience
+                    </button>
+</div>
+</section>
+<!-- Workshop 2: Tradition of Tea Brewing -->
+<section class="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105" data-alt="Hands holding a clay teapot pouring tea into a small cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUzhAWjxvL2NNqZxSXb2j7s9KLt6uL35eIIqq-fRRYj9gM09XVdcT7r0oPCt-mtvMmnXKODBdUtLu49Y3BdzIRPjpRrp0gpsjNiVYYtI5gOenRgFhz9sxTDUSgmAkVc83-c8CIbIXoiad0MpErhITKCBCQ5nLlwAzf2SAWFvb3kvHvze3INog38ZOOjt5cTzULP0-xoCzHkfJ_q--7OlU8Fw_1tZrv71BPtfP6nHzDqonPXukeKbeMlt08qkxonLV0IhM6Wcaqz_5"/>
+</div>
+<div class="absolute -top-8 -left-8 w-48 h-48 bg-surface-container-high rounded-full flex items-center justify-center p-6 text-center shadow-xl">
+<span class="font-headline italic text-primary text-lg">Educational &amp; Hands-on</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline text-4xl text-primary font-bold">Tradition of Tea Brewing</h2>
+<span class="text-2xl font-serif text-secondary">$50</span>
+</div>
+<div class="flex gap-4 text-sm text-on-surface-variant uppercase tracking-widest font-medium">
+<span>120 Minutes</span>
+<span>•</span>
+<span>Max 6 People</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Transition from observer to practitioner. This hands-on masterclass teaches you the physics of heat, the geometry of the Gaiwan, and the timing required to brew like a pro. Perfect for those looking to start their own home ritual.
+                    </p>
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<h4 class="font-bold text-primary uppercase text-xs tracking-widest">What's Included</h4>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="coffee_maker">coffee_maker</span>
+                                Personal Brewing Station
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="science">science</span>
+                                Temperature Science Guide
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="menu_book">menu_book</span>
+                                Printed Brewing Ritual Guide
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="shopping_bag">shopping_bag</span>
+                                Small Take-home Sample
+                            </li>
+</ul>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-12 py-4 rounded-full font-medium tracking-wide uppercase transition-all duration-500 hover:shadow-[0_20px_40px_rgba(23,52,28,0.2)]">
+                        Book This Experience
+                    </button>
+</div>
+</section>
+<!-- Workshop 3: Art of Tea Making -->
+<section class="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105" data-alt="Lush green tea plantation in New Zealand with rolling hills" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR5nY_2VM9VAWTqOHeL_1LgigvLOYqsg3SO-2bITxFqS_ibbe4v_Lo3Zkhm4X4blCWTsb0A4LigE_o_9FptsGiKF1AJMlS8mldgMPE-Nz1pie54HXfk3l_BDRgzNFv7srVuovNiAhAtc7pI78rUJRdQki9hX72Ab7qQEV_qfogr76VieZhbxxJRo5i3bZrWoaLfQolTTdsa7RwcZol156oHRismyiizaZ4MEAcx3TTy-lspXcv1IXB7YHIiGceqlyfOAfDYLV3Gs1S"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary-container rounded-full flex items-center justify-center p-6 text-center shadow-xl">
+<span class="font-headline italic text-on-primary text-lg">Tour &amp; Nature</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<div class="space-y-2">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline text-4xl text-primary font-bold">Art of Tea Making (Tour Included)</h2>
+<span class="text-2xl font-serif text-secondary">$50</span>
+</div>
+<div class="flex gap-4 text-sm text-on-surface-variant uppercase tracking-widest font-medium">
+<span>3 Hours</span>
+<span>•</span>
+<span>Max 6 People</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        A sensory journey from soil to cup. Walk through our New Zealand plantation to see the growth cycle of the tea plant. Learn about the complex oxidation and rolling process that defines different varieties. <span class="italic text-secondary">*Weather dependent experience.</span>
+</p>
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<h4 class="font-bold text-primary uppercase text-xs tracking-widest">What's Included</h4>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="forest">forest</span>
+                                Guided Garden Tour
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="factory">factory</span>
+                                Processing Facility Access
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="eco">eco</span>
+                                Fresh Leaf Sampling
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="cloud">cloud</span>
+                                Indoor Alternate Plan
+                            </li>
+</ul>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary px-12 py-4 rounded-full font-medium tracking-wide uppercase transition-all duration-500 hover:shadow-[0_20px_40px_rgba(23,52,28,0.2)]">
+                        Book This Experience
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3ee] rounded-t-[2.5rem] mt-24 w-full px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-[#17341c] font-['Manrope'] leading-relaxed text-sm">
+<div class="space-y-6">
+<div class="text-xl font-serif text-[#17341c]">The Art of Presence</div>
+<p class="text-[#1c1c19]/70 max-w-xs">
+                Inspired by Taiwanese Tradition and New Zealand Landscapes. A sanctuary for tea lovers.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold uppercase tracking-widest text-xs opacity-50 mb-2">Quick Links</h4>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Workshops</a>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Our Story</a>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold uppercase tracking-widest text-xs opacity-50 mb-2">Legal</h4>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Privacy Policy</a>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Terms of Service</a>
+<a class="text-[#1c1c19]/70 hover:translate-x-1 transition-transform duration-500" href="#">Shipping &amp; Returns</a>
+<div class="pt-8 text-[10px] uppercase tracking-widest opacity-40">
+                © 2024 The Art of Presence.
+            </div>
+</div>
+</footer>
+</body></html>

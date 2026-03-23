@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e5e2dd",
+              "on-error": "#ffffff",
+              "tertiary": "#382c1f",
+              "on-surface-variant": "#424841",
+              "on-secondary-fixed": "#241a06",
+              "background": "#fcf9f4",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#f4dfcb",
+              "surface-container-highest": "#e5e2dd",
+              "tertiary-container": "#4f4234",
+              "secondary-container": "#f2ddbd",
+              "secondary-fixed": "#f5e0c0",
+              "primary-fixed": "#c8ecc8",
+              "surface-bright": "#fcf9f4",
+              "on-background": "#1c1c19",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#adcfad",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#706047",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#53452d",
+              "on-tertiary-fixed": "#241a0e",
+              "secondary-fixed-dim": "#d8c4a5",
+              "surface-tint": "#47664a",
+              "outline": "#737971",
+              "surface-container-low": "#f6f3ee",
+              "primary": "#17341c",
+              "outline-variant": "#c2c8bf",
+              "inverse-primary": "#adcfad",
+              "on-surface": "#1c1c19",
+              "surface-dim": "#dcdad5",
+              "on-primary-fixed-variant": "#2f4e33",
+              "primary-container": "#2d4b31",
+              "inverse-surface": "#31302d",
+              "on-tertiary-container": "#c1ae9c",
+              "surface-container": "#f0ede8",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#ebe8e3",
+              "error-container": "#ffdad6",
+              "secondary": "#6c5c43",
+              "on-primary-fixed": "#03210b",
+              "on-tertiary-fixed-variant": "#524436",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "surface": "#fcf9f4",
+              "on-primary-container": "#98ba99",
+              "inverse-on-surface": "#f3f0eb"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .ease-out-expo { transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+      .bg-grain {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim selection:text-primary min-h-screen relative overflow-hidden">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0">
+<img alt="" class="w-full h-full object-cover scale-105" data-alt="Blurred serene misty morning in a lush tea garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoCI1jUL3IAjrrZ6__94iHfa7GOIVkM1gN2vmjZdTKy2aVGKz8OdZwqcujYb_exiRFqYVXEQCtZflD4aCVqLCyURaM3NhsZFiTNGO4OM3VkVAW7y68rXSLElUnFM-YtPEokOGEIYg6cwstQapcwhABKwVEl0a1JjhfcnWdjnDJAmfIvDwyEefXlfUT_1s7_GdPjTa2IlKOhlsBIH268nKJy7f-4K1l7J5e3BnN1wEnKEkpmWNujd1gvxZYiJubxcM-p2yLI41UcBuK"/>
+<div class="absolute inset-0 bg-background/40 backdrop-blur-2xl"></div>
+<div class="absolute inset-0 bg-grain pointer-events-none"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 min-h-screen flex items-center justify-center p-6">
+<!-- Login Card -->
+<div class="w-full max-w-md bg-surface/80 backdrop-blur-xl rounded-xl shadow-2xl shadow-on-surface/5 overflow-hidden flex flex-col items-center">
+<!-- Branding Header -->
+<div class="w-full pt-12 pb-8 px-10 text-center">
+<div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/10">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="spa">spa</span>
+</div>
+<h1 class="font-headline text-3xl font-bold tracking-tight text-primary mb-2">Sanctuary Admin</h1>
+<p class="font-body text-sm text-secondary tracking-widest uppercase">The Art of Presence</p>
+</div>
+<!-- Login Form Container -->
+<div class="w-full px-10 pb-12 space-y-8">
+<!-- Input Group: Email -->
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-[0.15em] text-secondary font-semibold ml-1" for="email">Email Address</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-lg py-4 pl-4 pr-12 text-on-surface font-body focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300 placeholder:text-outline-variant/60" id="email" placeholder="admin@mosotea.nz" type="email"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="font-label text-xs uppercase tracking-[0.15em] text-secondary font-semibold" for="password">Security Token</label>
+<a class="text-[10px] uppercase tracking-wider text-secondary/60 hover:text-primary transition-colors font-semibold" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-lg py-4 pl-4 pr-12 text-on-surface font-body focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300 placeholder:text-outline-variant/60" id="password" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-label font-bold tracking-widest uppercase text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:translate-y-[-1px] transition-all duration-500 ease-out-expo active:scale-[0.98]">
+                    Enter Sanctuary
+                </button>
+</div>
+<!-- Decorative Footer Ornament -->
+<div class="w-full h-1 bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
+<div class="py-6 text-center">
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-secondary/40">
+                    © 2024 The Art of Presence. A New Zealand &amp; Taiwan Collaboration.
+                </p>
+</div>
+</div>
+</main>
+<!-- Global Decoration Elements -->
+<div class="fixed bottom-12 right-12 z-0 opacity-10 mix-blend-multiply pointer-events-none">
+<span class="material-symbols-outlined text-[12rem]" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+</body></html>

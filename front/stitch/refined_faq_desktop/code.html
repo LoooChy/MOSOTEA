@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Moso Tea</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#737971",
+              "secondary-fixed-dim": "#d8c4a5",
+              "secondary": "#6c5c43",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#53452d",
+              "error": "#ba1a1a",
+              "surface-bright": "#fcf9f4",
+              "surface-container-highest": "#e5e2dd",
+              "surface-tint": "#47664a",
+              "surface": "#fcf9f4",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e5e2dd",
+              "inverse-on-surface": "#f3f0eb",
+              "secondary-fixed": "#f5e0c0",
+              "on-secondary-container": "#706047",
+              "inverse-primary": "#adcfad",
+              "inverse-surface": "#31302d",
+              "on-tertiary-container": "#c1ae9c",
+              "surface-container": "#f0ede8",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1c1c19",
+              "on-primary-fixed": "#03210b",
+              "tertiary": "#382c1f",
+              "outline-variant": "#c2c8bf",
+              "surface-container-high": "#ebe8e3",
+              "background": "#fcf9f4",
+              "on-primary-container": "#98ba99",
+              "on-primary-fixed-variant": "#2f4e33",
+              "tertiary-fixed": "#f4dfcb",
+              "tertiary-container": "#4f4234",
+              "surface-container-low": "#f6f3ee",
+              "on-background": "#1c1c19",
+              "on-surface-variant": "#424841",
+              "secondary-container": "#f2ddbd",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#524436",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "primary-fixed": "#c8ecc8",
+              "on-secondary-fixed": "#241a06",
+              "primary-fixed-dim": "#adcfad",
+              "on-error-container": "#93000a",
+              "primary": "#17341c",
+              "primary-container": "#2d4b31",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#241a0e",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dcdad5"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-expo { transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Smooth Accordion */
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary span.expand-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 dark:bg-stone-950/80 backdrop-blur-md no-border-lines">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif tracking-tighter text-[#17341c] dark:text-[#fcf9f4]">
+                Moso Tea
+            </div>
+<div class="hidden md:flex items-center space-x-12 font-['Noto_Serif'] font-light tracking-wide">
+<a class="text-[#17341c]/70 hover:text-[#2d4b31] transition-colors duration-500" href="#">About</a>
+<a class="text-[#17341c]/70 hover:text-[#2d4b31] transition-colors duration-500" href="#">Workshops</a>
+<a class="text-[#17341c]/70 hover:text-[#2d4b31] transition-colors duration-500" href="#">Location</a>
+<a class="text-[#17341c] font-semibold border-b border-[#17341c]/20 hover:text-[#2d4b31] transition-colors duration-500" href="#">FAQ</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label text-sm tracking-widest uppercase transition-all duration-700 hover:shadow-lg">
+                Book Ceremony
+            </button>
+</nav>
+</header>
+<main class="pt-40 pb-24 max-w-[1200px] mx-auto px-6">
+<!-- Hero Section: More integrated & breathable -->
+<section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<span class="font-label text-xs tracking-[0.4em] uppercase text-secondary mb-6 block">Commonly Asked Questions</span>
+<h1 class="font-headline text-5xl md:text-6xl text-primary leading-tight mb-8">Preparing for your<br/>Tea Ritual</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-lg leading-relaxed opacity-80">
+                    From our Taiwanese roots to the serene landscapes of New Zealand, find everything you need to know about our ceremonies and workshops.
+                </p>
+</div>
+<div class="order-1 md:order-2">
+<div class="aspect-[16/10] overflow-hidden rounded-2xl">
+<img alt="Tea Ceremony Details" class="w-full h-full object-cover grayscale-[0.1] hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5CtSQE7l1J8-LBJp-a7ooNVyF02B2WuB50Son4TFWeeZwlPIH34C0TJIloH6oERwCZyEMV3fhOwABmCPPrsmmyt6PZHMXFDWdxTm3hu1OO0SE6wFMGP89iNXY7vkqskZRZiQEaqQCGjvr7FNg63LSw-KpFrCvupRVu4JHuzYyN9pHGQLjj0RPUpwIhMUSel__sU_16AyuB9v0LrRgtxX72PxGkcUYZ23ckVi7qECRJqXfRjUaUaryu4xBF4UaoGZ9Qd0gvg2TWT0B"/>
+</div>
+</div>
+</section>
+<!-- FAQ Categories: Integrated vertical layout -->
+<div class="space-y-32">
+<!-- Category 1: The Experience -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4">
+<div class="sticky top-32">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<span class="font-label text-sm tracking-widest uppercase">01</span>
+</div>
+<h2 class="font-headline text-3xl text-primary mb-6">The Experience</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">Details about the atmosphere, what to expect, and the flow of our rituals.</p>
+</div>
+</div>
+<div class="md:col-span-8 divide-y divide-primary/10">
+<details class="group py-8" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">How long is a session?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">Ceremonies typically range from 90 minutes to 3 hours, depending on the chosen workshop and the natural flow of the tea service. We encourage guests to arrive without a rigid schedule to fully immerse in the practice.</p>
+</div>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">What's included in my booking?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">All premium Taiwanese teas, traditional seasonal tea snacks, and a guided narrative on tea history and preparation are included. You will also have access to our contemplative garden spaces before and after your session.</p>
+</div>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">Do I need prior knowledge of tea?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">No prior knowledge is required. We welcome those at every stage of their tea journey, from curious beginners to seasoned connoisseurs. Each ceremony is tailored to the resonance of the participants.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Category 2: Booking & Policies -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4">
+<div class="sticky top-32">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_month">calendar_month</span>
+<span class="font-label text-sm tracking-widest uppercase">02</span>
+</div>
+<h2 class="font-headline text-3xl text-primary mb-6">Booking &amp; Policies</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">Information on reservations, cancellations, and group sizes.</p>
+</div>
+</div>
+<div class="md:col-span-8 divide-y divide-primary/10">
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">How do I manage my booking?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">Bookings are managed through our online portal. You can reschedule up to 24 hours before your appointment. Cancellations made 48 hours in advance receive a full refund.</p>
+</div>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">What are the group size limits?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">To maintain tranquility, our maximum group size is strictly limited to 6 guests. This ensures an intimate dialogue between the tea master and each participant.</p>
+</div>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h3 class="font-headline text-xl text-primary">Is there a weather policy?</h3>
+<span class="material-symbols-outlined text-primary/40 expand-icon transition-transform duration-500" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-6 pr-12">
+<p class="font-body text-on-surface-variant leading-relaxed">Outdoor tea tours may be rescheduled in heavy rain. Indoor ceremonies proceed regardless of weather; many find the sound of rain on our pavilion roof enhances the meditative experience.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Category 3: Location -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4">
+<div class="sticky top-32">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="location_on">location_on</span>
+<span class="font-label text-sm tracking-widest uppercase">03</span>
+</div>
+<h2 class="font-headline text-3xl text-primary mb-6">Location &amp; Access</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">Finding your way to our mountain sanctuary and accessibility details.</p>
+</div>
+</div>
+<div class="md:col-span-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+<div>
+<h3 class="font-headline text-xl text-primary mb-3">Arriving at the Site</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">Complimentary on-site parking is available. We suggest arriving 15 minutes early. The tea house is accessed via a short, gentle gravel pathway through the gardens.</p>
+</div>
+<div>
+<h3 class="font-headline text-xl text-primary mb-3">Accessibility</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">While our main pavilion is accessible, some parts of the garden trails are uneven. Please contact us in advance if you have specific mobility requirements.</p>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-[21/9] bg-surface-container-low group">
+<img alt="Location Map View" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV7Eg1e3YFOyUkHMZg3SpnLFhlAm68hJNV0OyFCuEaTW7hDVbHe-0v4RO86LAVnd4TFAJ3jmZXXJu1yYjiN2cnaxBtgs0gFWicF7pIDfAOIuY_n9aG6eGiJ2Gw1ic0jL4whIObaaIo0U0-BLAb7JzJezGF09je3FacI5w6GFWNqsxr0ir05e3DA4snV2OZkruSs8Jr1UeA1k7EW-OABiD_JXp_GWdxMULyqewm_PL0h4bVWJvsbgffUXcAkGdjUYwGIwyJvBSLGZup"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Contact CTA: Integrated and refined -->
+<section class="mt-48 pt-24 border-t border-primary/5 text-center">
+<h2 class="font-headline text-4xl text-primary mb-6">Still curious?</h2>
+<p class="font-body text-on-surface-variant mb-12 max-w-lg mx-auto opacity-70">Our concierge is happy to assist with bespoke group bookings, dietary requirements, or private tea consultations.</p>
+<a class="inline-flex flex-col items-center gap-4 group" href="#">
+<span class="bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</span>
+<span class="font-label text-xs tracking-widest uppercase text-primary border-b border-primary/20 pb-1 group-hover:border-primary transition-colors">Contact our concierge</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 mt-24 bg-[#f6f3ee] dark:bg-stone-900">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1440px] mx-auto">
+<div>
+<div class="text-xl font-serif text-[#17341c] dark:text-[#fcf9f4] mb-6">Moso Tea</div>
+<p class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-40">
+                    © Moso Tea. From Taiwan to New Zealand.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col space-y-4">
+<a class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Journal</a>
+<a class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col space-y-4">
+<a class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">Contact</a>
+</div>
+</div>
+<div class="md:text-right">
+<p class="text-[#17341c] dark:text-[#a3b899] font-['Manrope'] text-xs tracking-widest uppercase opacity-60 mb-4">Newsletter</p>
+<div class="flex md:justify-end">
+<input class="bg-transparent border-b border-[#17341c]/20 py-2 focus:outline-none focus:border-primary transition-colors text-sm w-full max-w-[240px]" placeholder="Email address" type="email"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

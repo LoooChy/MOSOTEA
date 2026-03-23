@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moso Tea | The Art of Presence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#6c5c43",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e5e2dd",
+              "surface-variant": "#e5e2dd",
+              "on-error": "#ffffff",
+              "outline-variant": "#c2c8bf",
+              "on-primary-container": "#98ba99",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#f2ddbd",
+              "on-secondary-container": "#706047",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#03210b",
+              "tertiary-fixed": "#f4dfcb",
+              "on-tertiary-fixed": "#241a0e",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#2f4e33",
+              "secondary-fixed": "#f5e0c0",
+              "inverse-surface": "#31302d",
+              "on-secondary-fixed-variant": "#53452d",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fcf9f4",
+              "tertiary": "#382c1f",
+              "surface-container-high": "#ebe8e3",
+              "outline": "#737971",
+              "surface-container": "#f0ede8",
+              "tertiary-container": "#4f4234",
+              "surface-tint": "#47664a",
+              "on-background": "#1c1c19",
+              "inverse-primary": "#adcfad",
+              "inverse-on-surface": "#f3f0eb",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "primary": "#17341c",
+              "primary-container": "#2d4b31",
+              "primary-fixed-dim": "#adcfad",
+              "surface-dim": "#dcdad5",
+              "on-tertiary-fixed-variant": "#524436",
+              "surface-container-low": "#f6f3ee",
+              "on-secondary-fixed": "#241a06",
+              "surface-bright": "#fcf9f4",
+              "on-tertiary-container": "#c1ae9c",
+              "primary-fixed": "#c8ecc8",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#d8c4a5",
+              "on-surface": "#1c1c19",
+              "on-error-container": "#93000a",
+              "background": "#fcf9f4",
+              "on-surface-variant": "#424841"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1)
+    }
+.text-shadow-sm {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    }
+.grain-overlay {
+    position: relative
+    }
+.grain-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD43KEUpdjZrljiPr21s2b3HiWXtr5ptjRfas8qiI3C_9AzwjSs9jInX170X4KxXkKjhhZfYjma--D09yaH8SmrjRRfBt51XlZRdtPHX0SPFlEuUKWyqO7isUDEOwE5sWZF-NRnUlbghQ1DOPMm1JyFJC3C_H2QHV8H0bTwaG8mBHfNUO9DjiqiDo9yVUMxsENuLa1KPFLIoQZr9I0fSnFClu-T1w010Z4Nu0lqci3nf9DHEt6-h0GgMV0Q1UujWf1aBkMSm65JBg8B);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-6 max-w-[1440px] left-1/2 -translate-x-1/2 z-50 bg-[#fcf9f4]/80 dark:bg-[#1c1c19]/80 backdrop-blur-xl shadow-[0_40px_40px_rgba(28,28,25,0.06)]">
+<div class="text-2xl font-serif italic text-[#17341c] dark:text-[#fcf9f4]">The Art of Presence</div>
+<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] tracking-tight text-sm uppercase">
+<a class="text-[#17341c] dark:text-[#fcf9f4] border-b-2 border-[#17341c] pb-1 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#about">About</a>
+<a class="text-[#1c1c19]/60 dark:text-[#fcf9f4]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#workshops">Workshops</a>
+<a class="text-[#1c1c19]/60 dark:text-[#fcf9f4]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#location">Location</a>
+<a class="text-[#1c1c19]/60 dark:text-[#fcf9f4]/60 hover:text-[#17341c] transition-colors duration-500 ease-out-expo" href="#faq">FAQ</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label font-semibold text-sm hover:opacity-90 active:scale-95 transition-all duration-700">
+            Book Now
+        </button>
+</nav>
+<main class="grain-overlay">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 px-6 md:px-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Tea Ceremony" class="w-full h-full object-cover" data-alt="Serene tea ceremony with steam rising and ceramic bowls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjnP0bZKnQ-8j5eoJadz7M65dxewNunMq5M52U6JAThI-5KWg2C8t-C_1Rh4loUVPaTC9naLGBEJDNTELZ0Gp-nfvc-iFaPEZTMyZwYYms9689AThbbs0ojh9d-n0Tw-oF03LfoJNOKsH_RWLHBTgo3A55OeOZmNARKhBG0Hj567Nl9bRU0vTszfd0uyLGoPrfU52Or_EPSQue2tqJaZTyW-0gaoEScVsyEjVQQm5fFwY-VYZXxUbNvxJgLmpJhQuf-UPRereSY89R"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-3xl">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">Lower Hutt, New Zealand</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface leading-[1.1] tracking-tight mb-8">
+                    Authentic <span class="italic text-primary font-normal">Taiwanese</span> Tea Experience
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                    Escape the rhythm of the modern world. Discover the ancient art of presence through guided tea rituals in the heart of New Zealand's wilderness.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-full font-label font-bold text-lg hover:opacity-95 transition-all shadow-xl shadow-primary/10">
+                        Book a Workshop
+                    </button>
+<button class="bg-surface-container-high text-primary px-10 py-5 rounded-full font-label font-bold text-lg hover:bg-surface-container-highest transition-all">
+                        Explore Our Workshops
+                    </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
+<span class="text-xs uppercase tracking-widest font-bold">The Journey Begins</span>
+<div class="w-px h-16 bg-on-surface-variant"></div>
+</div>
+</section>
+<!-- Introduction: The Mission -->
+<section class="py-32 px-6 md:px-24 bg-surface" id="about">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Traditional Tea Leaves" class="w-full h-full object-cover" data-alt="Handcrafted ceramic tea pot on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAorF4CLFHLcJHAi4RzB64CVA9PtQzN6NunOyQmIwgf9g4HqwBF5-hHUaK_Liy9mnCs2b1PRmQXqLfoBlaq5Y5Nyxjowupgd3vtCdVzwx4nUhbAz24Xm_TU8CCt_pNQ53GCYOoZ6Y5ilEMnQDgs8NCx6rg6aX9qstG7Krme4TSeYh5VOTwcQsZ3W6Nv1DttP-Ns8w0hX_DoQUXw_R9siZy5lUUCPMD1wV4vdjzyMJI9wfIET6PlEi6k2UYUg7v0DclIPdWeelWfkYmR"/>
+</div>
+<div class="absolute -bottom-12 -right-12 w-64 h-64 bg-primary-fixed rounded-2xl p-8 hidden lg:flex flex-col justify-end">
+<span class="text-primary font-serif italic text-4xl mb-4 text-shadow-sm">Healing</span>
+<p class="text-on-primary-fixed-variant text-sm font-medium">Restoring the soul through the tactile ritual of brewing.</p>
+</div>
+</div>
+<div>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-8">Our Heritage, <br/><span class="italic text-secondary font-normal">Your Sanctuary</span></h2>
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+<p>Moso Tea is more than a workshop; it is a family-run bridge between the lush high-mountain tea plantations of Taiwan and the serene lifestyle blocks of Lower Hutt.</p>
+<p>Our mission is to preserve the authentic culture of tea—not just as a beverage, but as a medium for mindfulness and connection. We prioritize sustainability in every leaf we source and every practice we share.</p>
+<div class="pt-8 grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-bold text-primary mb-2 uppercase text-xs tracking-widest">Sustainability</h4>
+<p class="text-sm">Direct-trade, organic practices and zero-waste ceremonies.</p>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-2 uppercase text-xs tracking-widest">Authenticity</h4>
+<p class="text-sm">Three generations of family knowledge in tea preparation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Workshop Showcase -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-low" id="workshops">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 italic">The Rituals</h2>
+<p class="text-on-surface-variant">Carefully curated experiences designed to lower your heart rate and sharpen your senses.</p>
+</div>
+<span class="text-primary font-label font-bold border-b border-primary/20 pb-2 cursor-pointer hover:border-primary transition-all">View All Offerings</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group bg-surface rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-700 ease-out-expo flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Tea Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Close up of a wooden tea tray with matcha whisk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsoJBl1_n7QqpDpQ3g78Rxj1_JwWZ3XYGxsLk0_HrGZyp9AwV5hN97CmrTkDhHoHin-WlBnQ4XD4EWRD3l3sNE5XBB_tooukWKCSX2Dc7LKo9YuSI2VyucJM9XJdJSHDLYs6Y5lIYaEmksRdsToS3mFhdawJAPJ6Xpz4hqW6BlWtKutmvhRxa_vHKxg-T2dhRKD8gVwbyoPpLcBqLBxurtCVgnHP4iKofIMD7NOpqDZ_O7sIqRQnk-CJ5_KibGh7qe5t8ElRwn9x5j"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold uppercase text-primary">Popular</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl text-on-surface">Authentic Tea Ceremony</h3>
+<span class="text-secondary font-bold">$50</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">A meditative 60-minute journey into the classic Gongfu tea style.</p>
+<div class="flex items-center gap-4 text-xs font-bold text-outline uppercase tracking-tighter">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 60 Mins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">group</span> Small Group</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-700 ease-out-expo flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Tea Brewing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Tea leaves steeping in a clear glass teapot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0Dmmyo-6GT7gYNEzL6RqHDwyTMRqDzLQXeHdDnLvgX5gSNfGMi1Y9eTvCNDouConmXXAX0PTCxCYRJjM30hsnmYHIOE5EBccy4HvY42qYFfMnNMxMEbFOvao2nwgk79DxFU9mhqwt0TooqKWJjE9oc78y3oSmZWLNgvGbU9PVZWduicE4td8sPtDWL3lzem5LEEWLaIF0BA2i0PzX8WsGVQAstzuP2RjXPYFB_rEAIAn55nyYsXmmQ-5kG5eKxWdCoOS7t7DqFjW"/>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl text-on-surface">Tradition of Tea Brewing</h3>
+<span class="text-secondary font-bold">$50</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Master the temperature and timing of different oolong cultivars.</p>
+<div class="flex items-center gap-4 text-xs font-bold text-outline uppercase tracking-tighter">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 90 Mins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_cafe</span> Leaves Included</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-700 ease-out-expo flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Tea Making Tour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Lush green tea plantation fields under sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc88hBKuwBO5JaIQE57LsTHf929fB_GYYU8BqigngEjH_lgOIKf5gPvorFXDIoX_qdsySRLRrCWo6PpSLA6RNc--DD4vmgiX54mFsAKRyqL5p67LKds_2hLP3kojdezafTyUnCmtludYxcIg532mh4E5NYektUnmMXImWiXLhKUaIx8zGsZux-2n4YrsM32psnPEnQsP0LteTFjxz03xPC3xrlpy6tvUt2SFF2BUpMkW-_2RGpDl_T1m6_smUKZVVpirw_yWa_717D"/>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl text-on-surface">Art of Tea Making</h3>
+<span class="text-secondary font-bold">$50</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">An immersive tour of our lifestyle block followed by a tasting session.</p>
+<div class="flex items-center gap-4 text-xs font-bold text-outline uppercase tracking-tighter">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 2 Hours</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">nature_people</span> Garden Tour</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-32 px-6 md:px-24 bg-surface" id="location">
+<div class="max-w-7xl mx-auto rounded-[3rem] bg-primary text-on-primary overflow-hidden flex flex-col md:flex-row">
+<div class="p-12 md:p-20 flex-1">
+<span class="text-primary-fixed-dim uppercase tracking-[0.3em] text-xs font-bold mb-6 block">Our Location</span>
+<h2 class="font-headline text-4xl md:text-5xl mb-8 leading-tight">A Sanctuary in <br/>Lower Hutt</h2>
+<p class="text-on-primary-container text-lg mb-10 leading-relaxed max-w-md">
+                        Situated on a hidden lifestyle block, our studio is surrounded by native New Zealand bush, creating the perfect acoustic backdrop for a tea ceremony.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">directions_car</span>
+<div>
+<h4 class="font-bold">By Car</h4>
+<p class="text-sm text-on-primary-container">25 mins from Wellington CBD. Private parking available on-site.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">train</span>
+<div>
+<h4 class="font-bold">Public Transit</h4>
+<p class="text-sm text-on-primary-container">10 min shuttle from Waterloo Station (please request in advance).</p>
+</div>
+</div>
+</div>
+<button class="mt-12 flex items-center gap-3 border-b border-on-primary/20 pb-2 hover:border-on-primary transition-all uppercase tracking-widest text-xs font-bold">
+                        Get Directions <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<div class="flex-1 h-[400px] md:h-auto min-h-[400px]">
+<img alt="Lower Hutt Landscape" class="w-full h-full object-cover" data-alt="Foggy mountains in New Zealand with green hills" data-location="Lower Hutt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQQDVIe-u-CJToStLXS-X1hSvwlsja3uwSPP_aUcgAGpWmIOpAGFp8sjyM8XZxQkf8EABwuGAMf0B7eFbtjejbGKYxehA7GZ3p01Bj1DmmB3Gas8KXnah1_jK0Y7TXhSZC-QSQW75S-Zmo3Ij1hG4V0Im14slvR6Qdk1uTfCaAIXqup9yF5OcgStNGrZoEGJcLOGFVXCWGK5Vtgc7w-BQQLqGiPzG1fR09IknrLKynhfzgUKEoDCxO-1nALNFJS7j1d7AhekJJODBs"/>
+</div>
+</div>
+</section>
+<!-- Social Proof / Why Choose Us -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-low/50">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl text-on-surface mb-4 italic italic">Why Moso Tea?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="text-center">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">diversity_1</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Intimate Groups</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">We limit workshops to 6 people to ensure every guest receives personal guidance and a quiet atmosphere.</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Direct Sourced</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Every leaf in our pot is hand-selected from heritage farms in Alishan and Lishan, Taiwan.</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-surface rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+</div>
+<h3 class="font-headline text-xl mb-4">Eco Conscious</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Our Wellington studio is plastic-free, using rainwater collection and traditional charcoal heating.</p>
+</div>
+</div>
+<!-- Testimonial -->
+<div class="mt-24 max-w-4xl mx-auto p-12 bg-surface rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)] border border-outline-variant/10 text-center">
+<span class="material-symbols-outlined text-primary/20 text-5xl mb-6">format_quote</span>
+<p class="font-headline text-2xl md:text-3xl text-on-surface leading-snug mb-8">
+                        "An incredibly moving experience. I came for the tea but left with a renewed sense of peace. The connection between Taiwan and New Zealand felt so natural here."
+                    </p>
+<div>
+<p class="font-bold text-primary uppercase tracking-widest text-xs">Sarah J.</p>
+<p class="text-on-surface-variant text-xs mt-1">Wellington, NZ</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-24 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 bg-[#f6f3ee] dark:bg-[#2d4b31]/10 rounded-t-[2.5rem] mt-24">
+<div class="flex flex-col gap-6">
+<div class="text-xl font-serif text-[#17341c] dark:text-[#fcf9f4]">The Art of Presence</div>
+<p class="font-['Manrope'] leading-relaxed text-sm text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 max-w-xs">
+                Inspired by Taiwanese Tradition and New Zealand Landscapes. A family pursuit of peace, one cup at a time.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-[#17341c] text-sm uppercase tracking-widest mb-2">Connect</h4>
+<div class="flex flex-col gap-3 font-['Manrope'] text-sm text-[#1c1c19]/70">
+<p>Lower Hutt, New Zealand</p>
+<p>hello@mosotea.co.nz</p>
+<p>+64 4 123 4567</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-[#17341c] text-sm uppercase tracking-widest mb-2">Policies</h4>
+<div class="flex flex-col gap-3 font-['Manrope'] text-sm">
+<a class="text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:translate-x-1 transition-transform duration-500" href="#">Privacy Policy</a>
+<a class="text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:translate-x-1 transition-transform duration-500" href="#">Terms of Service</a>
+<a class="text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:translate-x-1 transition-transform duration-500" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+<div class="md:col-span-3 pt-12 border-t border-outline-variant/20">
+<p class="font-['Manrope'] leading-relaxed text-xs text-[#1c1c19]/60">
+                © 2024 The Art of Presence. Inspired by Taiwanese Tradition and New Zealand Landscapes.
+            </p>
+</div>
+</footer>
+</body></html>

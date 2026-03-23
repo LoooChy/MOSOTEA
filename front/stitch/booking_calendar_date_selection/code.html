@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Art of Presence | Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#47664a",
+              "primary": "#17341c",
+              "inverse-on-surface": "#f3f0eb",
+              "outline": "#737971",
+              "surface": "#fcf9f4",
+              "primary-fixed-dim": "#adcfad",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "secondary": "#6c5c43",
+              "secondary-fixed": "#f5e0c0",
+              "on-primary-fixed-variant": "#2f4e33",
+              "tertiary": "#382c1f",
+              "on-tertiary-fixed": "#241a0e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f0ede8",
+              "primary-fixed": "#c8ecc8",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#03210b",
+              "on-surface": "#1c1c19",
+              "tertiary-container": "#4f4234",
+              "surface-variant": "#e5e2dd",
+              "surface-container-highest": "#e5e2dd",
+              "surface-container-high": "#ebe8e3",
+              "on-secondary-fixed": "#241a06",
+              "surface-dim": "#dcdad5",
+              "on-primary-container": "#98ba99",
+              "on-surface-variant": "#424841",
+              "on-secondary-fixed-variant": "#53452d",
+              "on-background": "#1c1c19",
+              "inverse-surface": "#31302d",
+              "secondary-fixed-dim": "#d8c4a5",
+              "secondary-container": "#f2ddbd",
+              "on-error": "#ffffff",
+              "inverse-primary": "#adcfad",
+              "on-tertiary-fixed-variant": "#524436",
+              "surface-container-low": "#f6f3ee",
+              "outline-variant": "#c2c8bf",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#706047",
+              "error": "#ba1a1a",
+              "primary-container": "#2d4b31",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "background": "#fcf9f4",
+              "tertiary-fixed": "#f4dfcb",
+              "surface-bright": "#fcf9f4",
+              "on-tertiary-container": "#c1ae9c"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #adcfad;
+        border-radius: 10px;
+      }
+      .glass-nav {
+        background: rgba(252, 249, 244, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-6 max-w-[1440px] left-1/2 -translate-x-1/2 z-50 glass-nav">
+<div class="text-2xl font-headline font-bold text-primary tracking-tighter">The Art of Presence</div>
+<nav class="hidden md:flex items-center space-x-12 font-headline font-light tracking-wide">
+<a class="text-on-surface/60 hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="text-on-surface/60 hover:text-primary transition-colors" href="#">The Tea House</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Booking</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="hidden md:block material-symbols-outlined text-primary">notifications</button>
+<button class="hidden md:block material-symbols-outlined text-primary">account_circle</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label text-sm tracking-widest uppercase transition-transform active:scale-95">Reserve Now</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Selection Flow -->
+<div class="lg:col-span-8 space-y-16">
+<!-- Section 1: Experience Type -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h2 class="font-headline text-4xl text-primary font-light">Choose your journey</h2>
+<span class="text-sm font-label text-primary/40 uppercase tracking-widest">Step 01 / 03</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Experience Card 1 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer bg-surface-container-high transition-all duration-700 hover:shadow-2xl">
+<img alt="Traditional Taiwanese tea ceremony setup with steam" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu3gjOhgGkr3OQI9dQzymADrU04Slf0aQ6uB90_2IOxu1phoREQfVe5O1ksCK_xlqvxKNXkcAThfbWbn9_wv3MzJFHE-oFECs0RaKWfHi-LOvpt1nlT0pn7sE8Wjg9QYEPS64QGfJ3hwVgpPxSh0MsVOs0C1ozeY5NdpDuUrGcFqtgzQRmyT5m-34Bm2pgdXyAcj6pOjlQLPzEgyAyDwylbocnSJC4lgonyXYVsJk1x_ncIY_OSd-ee_64OGd-wr25rz-kMv_53Bx4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline text-xl text-white mb-2">Authentic Ceremony</h3>
+<p class="text-white/70 text-sm line-clamp-2">A meditative exploration of form and flavor.</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full p-2 border border-white/20">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Experience Card 2 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer bg-surface-container-high transition-all duration-700 hover:-translate-y-2">
+<img alt="Close up of dry tea leaves in a porcelain bowl" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHXMVERpRrQb6W7SsuNdW-5rk8Z2yHPh8C-mpBCQy-W0AbKjqGzBhufb10oD_Dsi77jgmftpowwRnx92orsW2OEiYaB686c0CDMJs6gU2-tYUCGUGzJcvSHo-7tLWkzNJWDo3-gBd-Mo2W60UB-SnJw9FGeFQFQlV9e1aWw6V1Q02oeJSvqqH9ExRKVoA60KciNwWiR5ksOHzXl4UDPD5daJw5YCuvH2mq7ORtoMOgE-BcQg1FaWGAgWmfUdLOOXIO8I1QQKod9AcG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline text-xl text-white mb-2">Brewing</h3>
+<p class="text-white/70 text-sm line-clamp-2">Mastering the physics of water and leaf.</p>
+</div>
+</div>
+<!-- Experience Card 3 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer bg-surface-container-high transition-all duration-700 hover:-translate-y-2">
+<img alt="Hands sorting fresh green tea leaves" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCqnaRgLwti4Db7TJ2sv_hBZ8PBPgoRxg86aF-2byg5y-b-vgQxK4tajU1pMhLc8zmjhjV-EKZ2hy4FImA21HoHyX6tN4B2QU3IoxwM9y85gVCFrI8ycJlEPqd7Qv-XVt7icEvVSEFxIPNVC3_T-KXO9mDwCL1NlbDFNtbXqZt7qVRVzqnHBzVF-g6fkp3wIO9NZ7ZMnwtUHCV9W1K_K_jJ30X5U6WGq9E0uHGYV7CAkiPvWWhlJDqnHpnlH4RUd8NIN7O-KeSN7oq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline text-xl text-white mb-2">Tea Making</h3>
+<p class="text-white/70 text-sm line-clamp-2">The tactile art of processing raw leaves.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Calendar Selection -->
+<section class="space-y-8">
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline text-4xl text-primary font-light">Select a date</h2>
+<span class="text-sm font-label text-primary/40 uppercase tracking-widest">Step 02 / 03</span>
+</div>
+<!-- Full-width Elegant Calendar -->
+<div class="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-10">
+<div class="flex items-center space-x-4">
+<h3 class="font-headline text-2xl text-primary">November 2024</h3>
+<div class="flex space-x-1">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">chevron_left</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex items-center space-x-6 text-[10px] uppercase tracking-[0.2em] font-label text-on-surface/40">
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div> Selected</div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full border border-primary/20 bg-primary/10"></div> Available</div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-surface-dim opacity-30"></div> Fully Booked</div>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-6">
+<!-- Weekdays -->
+<div class="text-center text-xs font-label uppercase tracking-widest text-on-surface/30 mb-4">Mon</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-on-surface/30 mb-4">Tue</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-on-surface/30 mb-4">Wed</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-on-surface/30 mb-4">Thu</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-on-surface/30 mb-4">Fri</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-primary/60 mb-4">Sat</div>
+<div class="text-center text-xs font-label uppercase tracking-widest text-primary/60 mb-4">Sun</div>
+<!-- Calendar Days -->
+<!-- Empty slots for Friday start (dummy for Nov 2024 starts on Friday) -->
+<div class="aspect-square flex items-center justify-center text-on-surface/10">-</div>
+<div class="aspect-square flex items-center justify-center text-on-surface/10">-</div>
+<div class="aspect-square flex items-center justify-center text-on-surface/10">-</div>
+<div class="aspect-square flex items-center justify-center text-on-surface/10">-</div>
+<!-- Nov 1 -->
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl text-on-surface/20 cursor-not-allowed text-sm">1</button>
+<!-- Weekend 2-3 -->
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl hover:bg-surface-container transition-all group relative border border-primary/10">
+<span class="text-lg font-headline">2</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl bg-surface-dim/20 opacity-40 cursor-not-allowed">
+<span class="text-lg font-headline">3</span>
+<span class="text-[8px] uppercase tracking-tighter text-error/60 mt-1">Full</span>
+</button>
+<!-- Week 2 -->
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">4</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">5</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">6</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">7</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">8</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">9</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">10</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<!-- Week 3 -->
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">11</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">12</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">13</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">14</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">15</button>
+<!-- Selected Day: 16 -->
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl bg-primary text-on-primary shadow-xl shadow-primary/20 transform scale-105 z-10">
+<span class="text-lg font-headline">16</span>
+<span class="text-[8px] uppercase tracking-tighter opacity-70 mt-1">Chosen</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">17</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<!-- Week 4 -->
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">18</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">19</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">20</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">21</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">22</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">23</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">24</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<!-- Week 5 -->
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">25</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">26</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">27</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">28</button>
+<button class="aspect-square flex items-center justify-center text-on-surface/20 cursor-not-allowed">29</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-2xl border border-primary/10 hover:bg-surface-container transition-all">
+<span class="text-lg font-headline">30</span>
+<span class="text-[8px] uppercase tracking-tighter text-primary/40 mt-1">Avail</span>
+</button>
+<div class="aspect-square flex items-center justify-center text-on-surface/10">-</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Time Slots -->
+<section class="space-y-8">
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline text-4xl text-primary font-light">Available times</h2>
+<span class="text-sm font-label text-primary/40 uppercase tracking-widest">Step 03 / 03</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Time Slot Card: Morning -->
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-primary/5 flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-500">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-white/10">
+<span class="material-symbols-outlined text-primary group-hover:text-white">wb_twilight</span>
+</div>
+<div>
+<div class="text-lg font-headline">09:00 — 10:30</div>
+<div class="text-sm text-on-surface/50 group-hover:text-white/60">Morning Mist Session</div>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-xs font-label uppercase tracking-widest text-primary group-hover:text-white">4 spots left</span>
+</div>
+</div>
+<!-- Time Slot Card: Midday -->
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-primary/5 flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-500">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-white/10">
+<span class="material-symbols-outlined text-primary group-hover:text-white">light_mode</span>
+</div>
+<div>
+<div class="text-lg font-headline">11:30 — 13:00</div>
+<div class="text-sm text-on-surface/50 group-hover:text-white/60">Zenith Light Session</div>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-xs font-label uppercase tracking-widest text-primary group-hover:text-white">2 spots left</span>
+</div>
+</div>
+<!-- Time Slot Card: Afternoon (Selected) -->
+<div class="p-6 rounded-xl bg-primary text-on-primary ring-2 ring-primary ring-offset-4 ring-offset-surface flex items-center justify-between group cursor-pointer transition-all duration-500">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">wb_sunny</span>
+</div>
+<div>
+<div class="text-lg font-headline">14:00 — 15:30</div>
+<div class="text-sm text-white/60">Golden Hour Session</div>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-xs font-label uppercase tracking-widest text-white">6 spots left</span>
+</div>
+</div>
+<!-- Time Slot Card: Evening -->
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-primary/5 flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-500 opacity-60">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-white/10">
+<span class="material-symbols-outlined text-primary group-hover:text-white">nights_stay</span>
+</div>
+<div>
+<div class="text-lg font-headline">16:30 — 18:00</div>
+<div class="text-sm text-on-surface/50 group-hover:text-white/60">Dusk Ritual</div>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-xs font-label uppercase tracking-widest text-error">Sold out</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Sidebar -->
+<aside class="lg:col-span-4">
+<div class="sticky top-32 p-10 rounded-3xl bg-surface-container-low shadow-sm border border-outline-variant/10 space-y-10">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-6">Reservation Summary</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-xs uppercase tracking-widest text-on-surface/40 mb-1">Experience</div>
+<div class="font-headline text-lg">Authentic Ceremony</div>
+</div>
+<button class="text-xs text-primary underline underline-offset-4 uppercase tracking-tighter">Change</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="text-xs uppercase tracking-widest text-on-surface/40 mb-1">Date &amp; Time</div>
+<div class="font-headline text-lg">Sat, Nov 16 • 14:00</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-baseline">
+<div class="text-xs uppercase tracking-widest text-on-surface/40">Total for 1 Guest</div>
+<div class="text-3xl font-headline text-primary">$50.00</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-full font-label tracking-widest uppercase text-sm shadow-xl hover:shadow-primary/20 transition-all duration-500 active:scale-[0.98]">
+                            Continue to Guest Info
+                        </button>
+<p class="text-[10px] text-center text-on-surface/40 uppercase tracking-widest leading-relaxed">
+                            Cancellations permitted up to 24 hours prior to the session start time.
+                        </p>
+</div>
+<!-- Decorative Texture/Image -->
+<div class="relative h-48 w-full rounded-2xl overflow-hidden mt-8 grayscale opacity-40">
+<img alt="Close up of a textured ceramic tea cup" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNy5RkRu7ALP0eq2ESrjZgfkJr4zb3xSGBbxxcCw7fIdncXiZKWbQCsr3LvqDF1B5y2gDjclaHLl0UL-ZTNxCTPrSwD5C-UDa5RsABoWdkHCMSkhkqiO0c15IIS3LeOhmggDs9GazuuhKK1ROTqA6sQZa8H_x9mZhXRiji9tfHtTXFx8bSZl64Mvgr2A82-_E2hAiM5VJ92ePxmREY3Zkah2UzgvIR0kqwyf5MNlzHviA0Niszcl2F4lmrrNnGJdjyANrMtxSHoRMn"/>
+<div class="absolute inset-0 bg-surface-container-low/20"></div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full h-20 glass-nav flex justify-around items-center px-6 pb-safe z-50">
+<div class="flex flex-col items-center justify-center text-on-surface/40">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface/40">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Book</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface/40">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

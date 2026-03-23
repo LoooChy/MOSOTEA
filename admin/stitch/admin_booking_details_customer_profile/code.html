@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Details | The Art of Presence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#47664a",
+                        "primary": "#17341c",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline": "#737971",
+                        "surface": "#fcf9f4",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#6c5c43",
+                        "secondary-fixed": "#f5e0c0",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "tertiary": "#382c1f",
+                        "on-tertiary-fixed": "#241a0e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ede8",
+                        "primary-fixed": "#c8ecc8",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#03210b",
+                        "on-surface": "#1c1c19",
+                        "tertiary-container": "#4f4234",
+                        "surface-variant": "#e5e2dd",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#241a06",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#98ba99",
+                        "on-surface-variant": "#424841",
+                        "on-secondary-fixed-variant": "#53452d",
+                        "on-background": "#1c1c19",
+                        "inverse-surface": "#31302d",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "secondary-container": "#f2ddbd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adcfad",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "surface-container-low": "#f6f3ee",
+                        "outline-variant": "#c2c8bf",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#706047",
+                        "error": "#ba1a1a",
+                        "primary-container": "#2d4b31",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "background": "#fcf9f4",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-bright": "#fcf9f4",
+                        "on-tertiary-container": "#c1ae9c"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAlkpeAd0mv7VAcFT4NZdv3tjFE91LMol52kVIURx4cGmpf44oFnHvmOPReye5zoYBAMml5gaV5_wa2d19wryHBfSrW5kDhfPoSNDMimjjo5eY8P6RmD4cTmTCrEvKeBFWbCiRJ3O_Fj3cZRMtWDlqKPZloXUIlM-UFI_DnsPNHg5v46vFRAyKuQkivwwnb5D6uAAY1nra5u_JP64bxvn8nloRttxlp63955ArX4P4L4JX-IUwmLtB6vusmeqT2lUl6_WLIXyHd2V_Q);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex">
+<!-- SideNavBar (Admin Shell) -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-0 py-8 space-y-4 bg-[#f6f3ee] dark:bg-stone-950 h-full w-72 border-r border-[#1c1c19]/10 font-['Manrope'] text-sm tracking-tight">
+<div class="px-8 mb-8">
+<h1 class="font-serif text-[#17341c] text-lg">Tea Master Admin</h1>
+<p class="text-[10px] uppercase tracking-widest opacity-60">Managing the Ritual</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">temp_preferences_custom</span>
+                Sessions
+            </a>
+<a class="flex items-center px-6 py-3 bg-[#17341c] text-white rounded-xl mx-2 shadow-sm transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">event_available</span>
+                Bookings
+            </a>
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+                Customers
+            </a>
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">insert_chart</span>
+                Analytics
+            </a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                Settings
+            </a>
+<a class="flex items-center px-6 py-3 text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl mx-2 transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">help_outline</span>
+                Support
+            </a>
+<div class="mt-6 px-4 py-4 bg-surface-container rounded-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="Tea Master Admin Profile Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4YmSM2JK5p6vB5-sjjkpuE5UutWfhjWRi3w1lftCs6NGESiN-wAt7SuROiOERBd2QVp2oQ6vgGxBCGoITJsfIUojxmm8RSStqHNyJOkIjHJLAyoxmXCEzhLL0i1QKHw66gltFARl3ruVehQTccq0G2t98Op_3E9I9Rwb9WVdEGIeeNPQQOLPGE6RKQxL6YrRHqXjXfWrIyXOnSlIBw02TH1sFpJ-MOSn2ES_yplhE6dBCnTEqZUemlkQxOblT8gxKDbEVlKdn70Jr"/>
+</div>
+<div>
+<p class="font-bold text-xs">Master Wei</p>
+<p class="text-[10px] opacity-60 uppercase tracking-tighter">Oolong Specialist</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 min-w-0 overflow-y-auto pb-24 lg:pb-12">
+<!-- Top Navigation (Mobile Friendly) -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl px-6 lg:px-12 py-6 flex justify-between items-center max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex flex-col">
+<h2 class="text-2xl font-serif text-primary tracking-tighter">Booking Details</h2>
+<p class="text-xs font-label text-outline uppercase tracking-[0.2em]">ID: #TP-8842-2024</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/20">
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium text-primary cursor-pointer">
+<option>Confirmed</option>
+<option>Pending</option>
+<option>Rescheduled</option>
+<option>Cancelled</option>
+<option>Completed</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label text-sm font-semibold tracking-wide shadow-lg hover:opacity-90 transition-all">
+                    Update Status
+                </button>
+</div>
+</header>
+<!-- Content Grid (Asymmetric Bento Style) -->
+<div class="px-6 lg:px-12 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-[1440px] mx-auto">
+<!-- Primary Column (8 Units) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Customer Profile Card -->
+<section class="bg-surface-container-low rounded-[2rem] p-8 relative overflow-hidden">
+<div class="grain-overlay absolute inset-0"></div>
+<div class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="w-32 h-44 rounded-2xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Customer Portrait Elegant Lifestyle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTbaTrAts8-VDIc6IqAgmvR91RYOF5G9YVJD6kfmluw3W7ZzbCrA01olFaSFpZnyMK_hWl-f896VlA1ThvIebCVN7IgSpEeYwhBZcEjGBw1BKEuVaN4WkhrmjoV-5MF6c1xcZ8teyZLyDHnlHxUPTgrYAybCmeCtUzaGr7OloHeR7iGjvz8d19f5j3L6KbyINUjF4NdLuldfWTJa4G1Wn83MaKE8hVEkx40Q6q_iRA4rKxvYHkvkAlbpGFm4T9OHUWeA2lCC8wuyvv"/>
+</div>
+<div class="flex-1 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-label uppercase tracking-widest text-secondary font-bold">Primary Guest</span>
+<h3 class="text-3xl font-serif text-primary mt-1">Evelyn Thorne</h3>
+<p class="text-outline italic">Frequent guest • Preferences: High-mountain Oolong</p>
+</div>
+<div class="bg-surface-bright px-4 py-2 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-[10px] uppercase font-bold text-outline">Loyalty Level</p>
+<p class="text-primary font-serif">Jade Member</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="text-sm">evelyn.thorne@example.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">call</span>
+<span class="text-sm">+64 21 029 3348</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="text-sm">Queenstown, NZ</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">calendar_month</span>
+<span class="text-sm">Last Visit: Jan 12, 2024</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking History (Asymmetric List) -->
+<section class="space-y-6">
+<h4 class="text-xl font-serif text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">history</span>
+                        Ritual History
+                    </h4>
+<div class="space-y-4">
+<!-- History Item 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center justify-between border-l-4 border-primary shadow-sm">
+<div class="flex gap-6 items-center">
+<div class="text-center">
+<p class="text-[10px] uppercase font-bold text-outline">May</p>
+<p class="text-xl font-serif">24</p>
+</div>
+<div>
+<p class="font-semibold text-primary">Mountain Mist Ceremony</p>
+<p class="text-xs text-outline">Duration: 90 mins • 2 Guests</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">$185.00</p>
+<span class="text-[10px] text-green-700 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 uppercase">Paid</span>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center justify-between shadow-sm opacity-60">
+<div class="flex gap-6 items-center">
+<div class="text-center">
+<p class="text-[10px] uppercase font-bold text-outline">Feb</p>
+<p class="text-xl font-serif">10</p>
+</div>
+<div>
+<p class="font-semibold text-primary">Private Tasting: 1980s Puerh</p>
+<p class="text-xs text-outline">Duration: 120 mins • 1 Guest</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">$340.00</p>
+<span class="text-[10px] text-outline bg-surface-container px-2 py-0.5 rounded-full border border-outline-variant/30 uppercase">Completed</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Internal Notes -->
+<section class="bg-primary/5 rounded-[2rem] p-8 border border-primary/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-xl font-serif text-primary">Master's Notes</h4>
+<button class="text-sm font-bold text-primary underline underline-offset-4 hover:opacity-70 transition-opacity">Add Note</button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface/50 p-5 rounded-xl border border-white/50 backdrop-blur-sm">
+<p class="text-sm leading-relaxed text-on-surface/80 italic">
+                                "Guest prefers a slower pace for the second infusion. Highly sensitive to temperature – ensure water is exactly 90°C for her Oolong sessions. Mentioned interest in purchasing a Yixing teapot next visit."
+                            </p>
+<p class="mt-4 text-[10px] font-bold text-outline uppercase">— Tea Master Lin, March 2024</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Column (4 Units) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Quick Actions Card -->
+<section class="bg-surface-container-high rounded-3xl p-6 shadow-sm flex flex-col gap-4">
+<h4 class="text-sm font-label font-bold uppercase tracking-widest text-primary mb-2">Management Actions</h4>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-white transition-all group">
+<span class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">edit_calendar</span>
+                            Reschedule
+                        </span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-white transition-all group">
+<span class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">send</span>
+                            Send Email Reminder
+                        </span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">chevron_right</span>
+</button>
+<hr class="border-outline-variant/30 my-2"/>
+<button class="w-full flex items-center justify-between p-4 bg-error-container text-on-error-container rounded-xl hover:bg-error hover:text-on-error transition-all group">
+<span class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined">cancel</span>
+                            Cancel &amp; Refund
+                        </span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all">chevron_right</span>
+</button>
+</section>
+<!-- Session Details (Bento Sub-item) -->
+<section class="bg-[#17341c] text-white rounded-[2rem] p-8 relative overflow-hidden">
+<div class="grain-overlay absolute inset-0"></div>
+<div class="relative space-y-6">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl opacity-40">potted_plant</span>
+<div class="text-right">
+<p class="text-[10px] uppercase font-bold opacity-60">Session Type</p>
+<p class="font-serif text-lg">Mountain Mist</p>
+</div>
+</div>
+<div class="space-y-4 border-t border-white/10 pt-6">
+<div class="flex justify-between">
+<span class="text-xs opacity-60">Date</span>
+<span class="text-sm font-semibold">June 15, 2024</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs opacity-60">Time</span>
+<span class="text-sm font-semibold">14:00 - 15:30</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs opacity-60">Tea House</span>
+<span class="text-sm font-semibold">Bamboo Grove, Room 3</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs opacity-60">Total Amount</span>
+<span class="text-sm font-bold">$185.00</span>
+</div>
+</div>
+<div class="pt-4">
+<div class="w-full h-24 rounded-2xl overflow-hidden grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Traditional Tea Ceremony Setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB_fKsZS6029Qnx5W95CFbQfhOX2yFr0_flEaJRsaJxRBv6aRdPb--1NJgmfMuC5Lj39SoY_SX8hiUb4uIcaayLaDfS6RygEDAT_32o5TufMy39YxsP4OgFI_IFFp0BZ4zE0b4Q4o_t9wffFpTdpN0Vkxqm9KIEeqLN4ZVAKxolFnUqt1tpPO5OnRx4L58dNSl0e2ENUHvPnWvsk4r_c_rNcU9XiDhn1sXCQY74fUxQzcortBs8hgIW5F5MBZcR3NGYBVAc4C13JzH"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Log -->
+<section class="bg-surface-container-low rounded-3xl p-6 border border-outline-variant/10">
+<h4 class="text-[10px] font-label font-bold uppercase tracking-widest text-outline mb-4">Internal Audit Log</h4>
+<div class="space-y-6 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/30">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-primary border-4 border-surface-container-low"></div>
+<p class="text-[11px] font-bold text-primary">Status changed to Confirmed</p>
+<p class="text-[10px] text-outline">Today, 09:12 AM by System</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-outline-variant border-4 border-surface-container-low"></div>
+<p class="text-[11px] font-bold text-on-surface">Booking Created</p>
+<p class="text-[10px] text-outline">May 20, 11:45 PM by Evelyn Thorne</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full h-20 bg-[#fcf9f4]/90 dark:bg-stone-900/95 backdrop-blur-md flex justify-around items-center px-6 pb-safe rounded-t-3xl z-50 shadow-xl">
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40 dark:text-[#fcf9f4]/40" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40 dark:text-[#fcf9f4]/40" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#17341c] dark:text-[#a3b899] scale-110" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40 dark:text-[#fcf9f4]/40" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] text-[10px] font-medium uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

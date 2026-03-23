@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moso Admin - Customer Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#241a06",
+                        "surface-dim": "#dcdad5",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "tertiary": "#382c1f",
+                        "on-background": "#1c1c19",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#03210b",
+                        "primary-container": "#2d4b31",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424841",
+                        "outline": "#737971",
+                        "inverse-on-surface": "#f3f0eb",
+                        "on-surface": "#1c1c19",
+                        "secondary-fixed": "#f5e0c0",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "outline-variant": "#c2c8bf",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#c1ae9c",
+                        "on-primary-container": "#98ba99",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#4f4234",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface": "#fcf9f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#ebe8e3",
+                        "primary-fixed": "#c8ecc8",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0ede8",
+                        "primary": "#17341c",
+                        "inverse-surface": "#31302d",
+                        "inverse-primary": "#adcfad",
+                        "surface-container-low": "#f6f3ee",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "secondary": "#6c5c43",
+                        "on-tertiary-fixed": "#241e0e",
+                        "surface-bright": "#fcf9f4",
+                        "on-secondary-container": "#706047",
+                        "secondary-container": "#f2ddbd",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#47664a",
+                        "background": "#fcf9f4",
+                        "on-secondary-fixed-variant": "#53452d"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1)
+    }
+.bg-grain {
+    position: relative
+    }
+.bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCpAu-lq5d44of-35RRO-lBdVQ64nYy7EEMq5PEiqTAozHCLbjOYlaBqL_gPGl7K0-6xG7MUcNRYcz-_SL3ykJQ0UY9vYqHfBH8c5JuC4ZAfJ8SNSLQNmX2wqPx10b_p1v1wBjiQHjYo3yqhyfADcA_gStntD2wLU3uzis8kZtXxCKVGZijuFc4h_L_JzP9Pr_T-JhNl7MPheGPYRnIDftQmVeSnKhS4YzgCJ5G3-eWptohd8By5E2VPD156PvLAwKZOew6z3k9y-gl)
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-primary overflow-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-72 border-r border-[#1c1c19]/5 bg-[#f6f3ee] flex flex-col py-8 z-30 shrink-0">
+<div class="px-8 mb-10">
+<h1 class="font-headline text-xl text-[#17341c]">Moso Admin</h1>
+<p class="font-body font-medium text-sm tracking-wide text-on-surface-variant/70 uppercase">Tea Master Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body font-medium text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="bg-[#17341c] text-[#fcf9f4] rounded-xl mx-4 my-1 px-4 py-3 flex items-center gap-3 ease-out-expo duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body font-medium text-sm tracking-wide">Customers</span>
+</a>
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-body font-medium text-sm tracking-wide">Content Management</span>
+</a>
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="font-body font-medium text-sm tracking-wide">Orders</span>
+</a>
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body font-medium text-sm tracking-wide">Analytics</span>
+</a>
+</nav>
+<div class="px-8 py-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full py-3 font-medium text-sm shadow-sm hover:opacity-90 transition-opacity">
+                    New Entry
+                </button>
+</div>
+<div class="mt-auto border-t border-[#1c1c19]/5 pt-6">
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body font-medium text-sm tracking-wide">Settings</span>
+</a>
+<a class="text-[#1c1c19]/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl ease-out-expo duration-500" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="font-body font-medium text-sm tracking-wide">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-grain bg-background">
+<!-- Top Header & Search Area -->
+<header class="sticky top-0 z-20 bg-surface/80 backdrop-blur-xl px-12 py-10 flex flex-col gap-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary">Customer Directory</h2>
+<p class="font-body text-on-surface-variant mt-2 max-w-lg">Manage and nurture relationships with our community of tea enthusiasts across New Zealand and beyond.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 bg-surface-container-high text-primary px-5 py-2.5 rounded-full font-medium text-sm hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="ios_share">ios_share</span>
+                            Export
+                        </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-medium text-sm shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+                            Add Customer
+                        </button>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-2xl">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-12 pr-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 placeholder:text-on-surface-variant/40" placeholder="Search by name, preference, or email..." type="text"/>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex gap-2 px-2">
+<button class="bg-surface-container-highest text-primary px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
+                            Membership: All
+                            <span class="material-symbols-outlined text-base" data-icon="expand_more">expand_more</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-lg text-sm font-medium border border-outline-variant/10 flex items-center gap-2">
+                            Last Visit: 30 Days
+                            <span class="material-symbols-outlined text-base" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="bg-surface-container-lowest text-on-surface-variant p-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-xl" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Table Section (The Bento-inspired Table) -->
+<section class="px-12 pb-24">
+<div class="bg-surface-container-lowest rounded-[2rem] shadow-sm border border-outline-variant/10 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/10">
+<th class="px-8 py-6 font-headline italic text-lg text-primary font-medium">Name</th>
+<th class="px-6 py-6 font-headline italic text-lg text-primary font-medium">Status</th>
+<th class="px-6 py-6 font-headline italic text-lg text-primary font-medium">Preference</th>
+<th class="px-6 py-6 font-headline italic text-lg text-primary font-medium">Total Spent</th>
+<th class="px-6 py-6 font-headline italic text-lg text-primary font-medium">Last Visit</th>
+<th class="px-8 py-6"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1: VIP -->
+<tr class="group hover:bg-surface-container-low transition-colors ease-out-expo duration-500">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of an elderly gentleman smiling softly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfeAyOahGyjyi9m0Ayc9neNpPXV-R56_34OoY3HmzUpfcNmPtpYKCPUpiJf-8Z9ibp5HIAYcQETFsdpASLwkX7hlgXgoh1q2F1TER-ZbdQLBg7XJkXTkQeZb3KyK24LP4A6POmnnf9wPZuhdMrzxSQrXiwbaPS1WCzbtlJUSsWhLBL0Qoum3Gx_74bOfX7cm49nJ0eSEKTByaKwzDmknMBYurE-Ff9ImdgfEL-20NNvFEZtXQt32zWEQx_qgQ7GRYPb1ywd3sm8oLP"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Chen Wei-Ting</p>
+<p class="text-xs text-on-surface-variant/70">wei-ting.chen@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container">
+                                        VIP
+                                    </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-wrap gap-1">
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Alishan Oolong</span>
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Vintage Puerh</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="font-bold text-primary">$2,840.00</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Oct 24, 2023</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Regular -->
+<tr class="group hover:bg-surface-container-low transition-colors ease-out-expo duration-500">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="A young woman with a serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDui8X2yFj0MOJSJ9-0UsYfW9Ay6SeZ6RCInrdI5OYC494-dSr9vPdWEP6hgSemhkBNzoeMNTAVWt2o1OHy9zZxHFSxAR9Vs7DvgSUyH2aM9wpzSPE1BcLisvZj6bUAgTFbVIJuOowRwZSMjgLxXrHDjdP77Z4pTkADBekD5JhuGEQ-XV3p7WwYUtqMIHl54G_jyRko4ffjbME9xdcRoILpHzlxSInRO2mSIoLfCzapsJytoYhoYJKI7HC2igFhN13zhijhRJZPhxVG"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Auckland</p>
+<p class="text-xs text-on-surface-variant/70">sarah.a@kiwimail.nz</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-primary-fixed text-on-primary-fixed">
+                                        Regular
+                                    </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-wrap gap-1">
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Lishan High Mountain</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="font-bold text-primary">$845.50</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Nov 02, 2023</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: New -->
+<tr class="group hover:bg-surface-container-low transition-colors ease-out-expo duration-500">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="A man wearing glasses in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcC1MewcWHjrM0_cOjC1yiFnq4KhCDXu35UemdtPT1wXzoCX9O5GMsdRJ_9a18g2f2oYAnyKIUXbkrDdI5uZJwmOKHTA9MBQ9951NcTSdKJLNKMT9Xs7KYO6_g0znbQVPfL72eBrH5BqcIy5YITiZgwGo5BtcegbdtrfBeMj0Unz8_pd1TwZe-Blx7nAR2qRjR6a3WfjoNKbhxL6HaEVU4Hbd8Ftm0GL42n2ba19k8PemDNJbHOfHRJrqbmP-djBU-jGhmaxqF2K6P"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">James Tui</p>
+<p class="text-xs text-on-surface-variant/70">james.tui@tea.co.nz</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-surface-container-highest text-on-surface-variant">
+                                        New
+                                    </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-wrap gap-1">
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Ruby 18 Black</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="font-bold text-primary">$120.00</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Dec 15, 2023</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: VIP -->
+<tr class="group hover:bg-surface-container-low transition-colors ease-out-expo duration-500">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young woman with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbgyPYsuqbxcI-WZ2Rqsy_XtOMPuzPgsPBE-eHRwbOoMUwIr3NXuxXb8sIG-IBFEMQBcNOrHiHFYlphi5ZrZFPbq287sGhyKTsjewXaBhzUMng06X9W1Qf4QYIwdfrdssfBCiAM0fa1jOQT7m02ZZatUd65tfe_N72nvbnGm0H_ykRWvSREjkuL-u9pcpRoFaq4747xvbzBAIFMNvER0IgjtryW-s503YkG0Jcl8lWIZ9ZBFeAzWudnHcjC9-RSffSXS3XWeGjaPDZ"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Mei Lin</p>
+<p class="text-xs text-on-surface-variant/70">meilin@garden.tw</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container">
+                                        VIP
+                                    </span>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-wrap gap-1">
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Dragon Well</span>
+<span class="bg-primary/5 text-primary text-[11px] px-2 py-0.5 rounded-full border border-primary/10">Oriental Beauty</span>
+</div>
+</td>
+<td class="px-6 py-6">
+<span class="font-bold text-primary">$4,120.00</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Dec 18, 2023</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-8 py-6 flex items-center justify-between border-t border-outline-variant/10 bg-surface-container-low/30">
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-widest">Showing 4 of 1,240 enthusiasts</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant text-sm">2</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant text-sm">3</button>
+<span class="px-2 self-center text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant text-sm">48</button>
+</div>
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

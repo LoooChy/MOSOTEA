@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moso Tea Admin | The Art of Presence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#47664a",
+                        "primary": "#17341c",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline": "#737971",
+                        "surface": "#fcf9f4",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#6c5c43",
+                        "secondary-fixed": "#f5e0c0",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "tertiary": "#382c1f",
+                        "on-tertiary-fixed": "#241a0e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ede8",
+                        "primary-fixed": "#c8ecc8",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#03210b",
+                        "on-surface": "#1c1c19",
+                        "tertiary-container": "#4f4234",
+                        "surface-variant": "#e5e2dd",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#241a06",
+                        "surface-dim": "#dcdad5",
+                        "on-primary-container": "#98ba99",
+                        "on-surface-variant": "#424841",
+                        "on-secondary-fixed-variant": "#53452d",
+                        "on-background": "#1c1c19",
+                        "inverse-surface": "#31302d",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "secondary-container": "#f2ddbd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adcfad",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "surface-container-low": "#f6f3ee",
+                        "outline-variant": "#c2c8bf",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#706047",
+                        "error": "#ba1a1a",
+                        "primary-container": "#2d4b31",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "background": "#fcf9f4",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-bright": "#fcf9f4",
+                        "on-tertiary-container": "#c1ae9c"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex min-h-screen relative">
+<div class="fixed inset-0 bg-grain pointer-events-none z-0"></div>
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-0 py-8 space-y-4 bg-[#f6f3ee] dark:bg-stone-950 h-full w-72 border-r border-[#1c1c19]/10 z-10">
+<div class="px-8 mb-8">
+<h1 class="font-headline text-[#17341c] text-lg tracking-tight">Tea Master Admin</h1>
+<p class="text-on-surface-variant/60 text-xs mt-1">Managing the Ritual</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center px-6 py-3 mx-2 bg-[#17341c] text-white rounded-xl shadow-sm transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">temp_preferences_custom</span>
+<span class="font-label text-sm tracking-tight">Sessions</span>
+</a>
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">event_available</span>
+<span class="font-label text-sm tracking-tight">Bookings</span>
+</a>
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-label text-sm tracking-tight">Customers</span>
+</a>
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">insert_chart</span>
+<span class="font-label text-sm tracking-tight">Analytics</span>
+</a>
+</nav>
+<div class="px-4 py-4 mt-auto">
+<button class="w-full bg-primary text-white py-3 rounded-full font-label text-sm tracking-wide shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Session
+                </button>
+</div>
+<div class="pt-4 border-t border-outline-variant/20">
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label text-sm tracking-tight">Settings</span>
+</a>
+<a class="flex items-center px-6 py-3 mx-2 text-[#1c1c19]/70 dark:text-[#fcf9f4]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-3">help_outline</span>
+<span class="font-label text-sm tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-8 lg:p-12 z-10 max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div>
+<h2 class="font-headline text-4xl text-primary font-light tracking-tight mb-2">Morning, Tea Master</h2>
+<p class="text-on-surface-variant font-body">The garden is quiet. Here is the ritual oversight for today.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-3 rounded-full bg-surface-container-high text-primary font-label text-sm flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export List
+                    </button>
+<button class="px-6 py-3 rounded-full bg-error-container text-on-error-container font-label text-sm flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">weather_mix</span>
+                        Weather Alert Broadcast
+                    </button>
+</div>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Stat 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-4">Today's Bookings</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-5xl text-primary font-bold">12</span>
+<span class="text-primary-container text-sm font-medium">+2 from yesterday</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">calendar_today</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-4">Weekly Revenue</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-5xl text-primary font-bold">$4,280</span>
+<span class="text-primary-container text-sm font-medium">84% target</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">payments</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-4">Capacity Rate</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-5xl text-primary font-bold">92%</span>
+<span class="text-primary-container text-sm font-medium">Full season</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">humidity_percentage</span>
+</div>
+</div>
+</section>
+<!-- Upcoming Sessions Table -->
+<section class="bg-surface-container-lowest rounded-xl p-1 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<div class="p-8 border-b border-surface-variant/30 flex justify-between items-center">
+<h3 class="font-headline text-2xl text-primary">Upcoming Sessions</h3>
+<div class="flex gap-4">
+<button class="text-primary text-sm font-label flex items-center gap-1 hover:underline">
+                            View Calendar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-secondary/60 font-label text-xs uppercase tracking-widest">
+<th class="px-8 py-6 font-medium">Date &amp; Time</th>
+<th class="px-8 py-6 font-medium">Workshop Type</th>
+<th class="px-8 py-6 font-medium text-center">Booked/Total</th>
+<th class="px-8 py-6 font-medium">Status</th>
+<th class="px-8 py-6 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Oct 24, 2023</span>
+<span class="text-on-surface-variant/70">09:00 AM — 11:30 AM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">self_improvement</span>
+</div>
+<div>
+<p class="font-semibold text-primary">Zen Forest Ceremony</p>
+<p class="text-xs text-on-surface-variant/70">Master Hsiang</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<div class="inline-flex items-center justify-center px-3 py-1 bg-surface-variant rounded-full font-label font-bold text-primary">
+                                        4/6
+                                    </div>
+</td>
+<td class="px-8 py-6">
+<span class="flex items-center gap-2 text-primary font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        Open
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Oct 24, 2023</span>
+<span class="text-on-surface-variant/70">02:00 PM — 04:30 PM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">potted_plant</span>
+</div>
+<div>
+<p class="font-semibold text-primary">Oolong Deep Dive</p>
+<p class="text-xs text-on-surface-variant/70">Master Lin</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<div class="inline-flex items-center justify-center px-3 py-1 bg-primary text-white rounded-full font-label font-bold">
+                                        8/8
+                                    </div>
+</td>
+<td class="px-8 py-6">
+<span class="flex items-center gap-2 text-secondary font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Full
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-l-4 border-error/20">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Oct 25, 2023</span>
+<span class="text-on-surface-variant/70">10:00 AM — 12:30 PM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">landscape</span>
+</div>
+<div>
+<p class="font-semibold text-primary">Bamboo Grove Meditation</p>
+<p class="text-xs text-on-surface-variant/70">Master Hsiang</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<div class="inline-flex items-center justify-center px-3 py-1 bg-surface-variant rounded-full font-label font-bold text-primary">
+                                        2/12
+                                    </div>
+</td>
+<td class="px-8 py-6">
+<span class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-sm">warning</span>
+                                        Weather Alert
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Oct 25, 2023</span>
+<span class="text-on-surface-variant/70">03:30 PM — 05:00 PM</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">emoji_nature</span>
+</div>
+<div>
+<p class="font-semibold text-primary">Private Ritual Session</p>
+<p class="text-xs text-on-surface-variant/70">VVIP Guest</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<div class="inline-flex items-center justify-center px-3 py-1 bg-primary text-white rounded-full font-label font-bold">
+                                        1/1
+                                    </div>
+</td>
+<td class="px-8 py-6">
+<span class="flex items-center gap-2 text-secondary font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Full
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Note -->
+<footer class="mt-12 text-center">
+<p class="text-secondary/40 font-body text-sm italic italic">Every leaf tells a story. Every guest shares a journey.</p>
+</footer>
+</main>
+</div>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full h-20 bg-[#fcf9f4]/90 backdrop-blur-md flex justify-around items-center px-6 pb-safe z-50 shadow-xl">
+<a class="flex flex-col items-center justify-center text-[#17341c] scale-110" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Book</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1c1c19]/40" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

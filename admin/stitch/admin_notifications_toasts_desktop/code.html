@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#c1ae9c",
+              "on-secondary-fixed-variant": "#53452d",
+              "on-background": "#1c1c19",
+              "inverse-surface": "#31302d",
+              "tertiary": "#382c1f",
+              "surface-container-high": "#ebe8e3",
+              "inverse-on-surface": "#f3f0eb",
+              "surface-variant": "#e5e2dd",
+              "surface-bright": "#fcf9f4",
+              "background": "#fcf9f4",
+              "surface-container-highest": "#e5e2dd",
+              "surface-container": "#f0ede8",
+              "surface": "#fcf9f4",
+              "on-surface": "#1c1c19",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#adcfad",
+              "secondary-container": "#f2ddbd",
+              "on-tertiary-fixed": "#241a0e",
+              "on-secondary-fixed": "#241a06",
+              "inverse-primary": "#adcfad",
+              "tertiary-container": "#4f4234",
+              "secondary-fixed-dim": "#d8c4a5",
+              "secondary-fixed": "#f5e0c0",
+              "primary-fixed": "#c8ecc8",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f6f3ee",
+              "on-tertiary-fixed-variant": "#524436",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "primary": "#17341c",
+              "secondary": "#6c5c43",
+              "primary-container": "#2d4b31",
+              "on-primary-fixed-variant": "#2f4e33",
+              "outline-variant": "#c2c8bf",
+              "on-secondary-container": "#706047",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#03210b",
+              "outline": "#737971",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-tint": "#47664a",
+              "surface-dim": "#dcdad5",
+              "on-surface-variant": "#424841",
+              "on-primary-container": "#98ba99",
+              "tertiary-fixed": "#f4dfcb",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .ease-out-expo {
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-[#fcf9f4]/80 dark:bg-stone-950/80 backdrop-blur-xl docked full-width top-0 z-50 no-border shadow-none">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif italic text-[#17341c] dark:text-[#a3b899] tracking-tighter">
+                The Art of Presence
+            </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#1c1c19]/60 dark:text-[#f6f3ee]/60 hover:text-[#17341c] transition-colors duration-700 ease-out-expo font-serif text-[#1c1c19] dark:text-[#f6f3ee] tracking-tight" href="#">Collections</a>
+<a class="text-[#1c1c19]/60 dark:text-[#f6f3ee]/60 hover:text-[#17341c] transition-colors duration-700 ease-out-expo font-serif text-[#1c1c19] dark:text-[#f6f3ee] tracking-tight" href="#">Ceremony</a>
+<a class="text-[#1c1c19]/60 dark:text-[#f6f3ee]/60 hover:text-[#17341c] transition-colors duration-700 ease-out-expo font-serif text-[#1c1c19] dark:text-[#f6f3ee] tracking-tight" href="#">Our Story</a>
+<a class="text-[#17341c] dark:text-[#f6f3ee] font-medium border-b border-[#17341c]/20 font-serif tracking-tight" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="scale-100 active:scale-[0.99] transition-transform duration-500 text-[#17341c] dark:text-[#a3b899]">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="scale-100 active:scale-[0.99] transition-transform duration-500 text-[#17341c] dark:text-[#a3b899]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="relative pt-32 px-12 max-w-[1440px] mx-auto min-h-[819px]">
+<!-- UI Kit Documentation Intro -->
+<section class="max-w-2xl mb-24">
+<h1 class="font-headline text-5xl text-primary mb-6 leading-tight">System Notifications &amp; Toasts</h1>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed opacity-80">
+                A collection of unobtrusive, elegant feedback components designed for the Moso Tea Admin ecosystem. These floating elements prioritize visual silence while ensuring critical information reaches the user through soft tonal shifts and organic typography pairings.
+            </p>
+</section>
+<!-- Asymmetric Background Decorative Element -->
+<div class="absolute top-40 right-12 w-96 h-96 bg-primary-fixed/20 rounded-full blur-[120px] -z-10"></div>
+<!-- Toast Notification Stack Simulation (Fixed Positioned Container) -->
+<div class="fixed top-24 right-12 z-50 flex flex-col gap-6 w-[400px]">
+<!-- Success Toast: Booking Confirmed -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-[0_40px_80px_-20px_rgba(28,28,25,0.06)] border border-outline-variant/10 flex items-start gap-5 overflow-hidden transition-all duration-700 ease-out-expo hover:translate-y-[-2px]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-lg text-primary mb-1">Booking Confirmed</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-70">A tea ceremony reservation for the Alishan Suite has been successfully processed.</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-on-surface/30 hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Alert Toast: Weather Warning -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-[0_40px_80px_-20px_rgba(28,28,25,0.06)] border border-outline-variant/10 flex items-start gap-5 overflow-hidden transition-all duration-700 ease-out-expo hover:translate-y-[-2px]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="air" style="font-variation-settings: 'FILL' 1;">air</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-lg text-on-surface mb-1">Weather Warning: High Winds</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-70">Extreme wind conditions detected at the Highland plantation. Automated irrigation suspended.</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-on-surface/30 hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Info Toast: New Customer Note -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-[0_40px_80px_-20px_rgba(28,28,25,0.06)] border border-outline-variant/10 flex items-start gap-5 overflow-hidden transition-all duration-700 ease-out-expo hover:translate-y-[-2px]">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-tertiary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="sticky_note_2" style="font-variation-settings: 'FILL' 1;">sticky_note_2</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-lg text-on-surface mb-1">New Customer Note Added</h3>
+<p class="font-body text-sm text-on-surface-variant opacity-70">A note regarding water temperature preference has been added to James Liang's profile.</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-on-surface/30 hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Canvas Area / Admin Context Simulation -->
+<div class="w-full grid grid-cols-12 gap-12 mt-12">
+<div class="col-span-12 md:col-span-8 space-y-12">
+<div class="bg-surface-container-low p-12 rounded-[2rem] aspect-video flex flex-col justify-end relative overflow-hidden group">
+<img alt="Tea Fields" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale transition-transform duration-1000 group-hover:scale-105" data-alt="Vast green tea plantation in misty mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3BGCoXa_hF4mqHqJq6YHEL10eS64gYnABnKLJaTnuZNWzvkjUFLlWOwKWfBwVwynD1UOrwFCt3GeUniGu13UWOB-ELnIaH2D0r3DkXbrvD2nISj9OVfs5VUQuNkCFd5qZoA_zwuEbeDrTn-G07snAd3G_ZIEg1MZMnf48Zh67ghT39Q6ylkalwbgZYbBZtuaDRMaEEeueF67uX4DnTeQq2YrutKPKigS-_f_SqJ3N39Pl-yoH5yuxlstdZnGAnDKbRObZcfra9lsM"/>
+<div class="relative z-10">
+<span class="font-label text-xs tracking-widest uppercase text-primary/60 mb-4 block">Dashboard Overview</span>
+<h2 class="font-headline text-4xl text-primary max-w-md">The seasonal harvest has reached optimal oxidation levels.</h2>
+</div>
+</div>
+<!-- Bento Style Grid for Admin Stats -->
+<div class="grid grid-cols-2 gap-8">
+<div class="bg-surface-container-high p-8 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="monitoring">monitoring</span>
+<div class="text-3xl font-headline text-primary mb-1">92%</div>
+<div class="text-sm font-label uppercase tracking-wider text-on-surface/50">Production Yield</div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="humidity_mid">humidity_mid</span>
+<div class="text-3xl font-headline text-on-surface mb-1">14.2%</div>
+<div class="text-sm font-label uppercase tracking-wider text-on-surface/50">Leaf Moisture</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Sidebar Context -->
+<div class="col-span-12 md:col-span-4 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-headline text-xl text-primary mb-6">Recent Activity</h4>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div>
+<p class="text-sm font-medium">Batch #402 Stored</p>
+<p class="text-xs text-on-surface/50">2 hours ago • Storage Room C</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2"></div>
+<div>
+<p class="text-sm font-medium">System Alert Resolved</p>
+<p class="text-xs text-on-surface/50 shadow-none">5 hours ago • Irrigation Pump</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 border border-outline-variant/20 rounded-xl">
+<p class="font-serif italic text-lg text-primary/60">"Tea is the ultimate medicine for the spirit."</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f6f3ee] dark:bg-stone-900 w-full mt-24 no-border tonal-shift">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1440px] mx-auto">
+<div class="font-serif text-lg text-[#17341c] dark:text-[#a3b899] mb-8 md:mb-0">
+                The Art of Presence
+            </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-sans text-sm tracking-widest uppercase text-[#1c1c19]/40 dark:text-[#f6f3ee]/30 hover:text-[#17341c] transition-all duration-500" href="#">Shipping &amp; Rituals</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1c1c19]/40 dark:text-[#f6f3ee]/30 hover:text-[#17341c] transition-all duration-500" href="#">Privacy</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1c1c19]/40 dark:text-[#f6f3ee]/30 hover:text-[#17341c] transition-all duration-500" href="#">Wholesale</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1c1c19]/40 dark:text-[#f6f3ee]/30 hover:text-[#17341c] transition-all duration-500" href="#">Contact</a>
+</div>
+<div class="font-sans text-sm tracking-widest uppercase text-[#1c1c19]/50 dark:text-[#f6f3ee]/40 text-center md:text-right opacity-100 hover:opacity-80 transition-opacity">
+                © 2024 The Art of Presence. A Ritual of Taiwanese Origin.
+            </div>
+</div>
+</footer>
+</body></html>

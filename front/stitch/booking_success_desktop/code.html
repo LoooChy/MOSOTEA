@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#c1ae9c",
+              "on-secondary-fixed-variant": "#53452d",
+              "on-background": "#1c1c19",
+              "inverse-surface": "#31302d",
+              "tertiary": "#382c1f",
+              "surface-container-high": "#ebe8e3",
+              "inverse-on-surface": "#f3f0eb",
+              "surface-variant": "#e5e2dd",
+              "surface-bright": "#fcf9f4",
+              "background": "#fcf9f4",
+              "surface-container-highest": "#e5e2dd",
+              "surface-container": "#f0ede8",
+              "surface": "#fcf9f4",
+              "on-surface": "#1c1c19",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#adcfad",
+              "secondary-container": "#f2ddbd",
+              "on-tertiary-fixed": "#241a0e",
+              "on-secondary-fixed": "#241a06",
+              "inverse-primary": "#adcfad",
+              "tertiary-container": "#4f4234",
+              "secondary-fixed-dim": "#d8c4a5",
+              "secondary-fixed": "#f5e0c0",
+              "primary-fixed": "#c8ecc8",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f6f3ee",
+              "on-tertiary-fixed-variant": "#524436",
+              "tertiary-fixed-dim": "#d7c3b0",
+              "primary": "#17341c",
+              "secondary": "#6c5c43",
+              "primary-container": "#2d4b31",
+              "on-primary-fixed-variant": "#2f4e33",
+              "outline-variant": "#c2c8bf",
+              "on-secondary-container": "#706047",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#03210b",
+              "outline": "#737971",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-tint": "#47664a",
+              "surface-dim": "#dcdad5",
+              "on-surface-variant": "#424841",
+              "on-primary-container": "#98ba99",
+              "tertiary-fixed": "#f4dfcb",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1)
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDIbVk8iHsowDMAUd2ln5BJpBgPCfhZMADFqZOhZ1WgrmLEITq3DEdwC1UIj2-RZvlg1-EzMljzkM5aIYIgZUfzDvsi7j_OFrgQI4vOYnAizu7I6mk_o92K9zvF_yycZ-NBZg8kZIyJoIkzfVdMEcAmLFlhnk-vSIA_Zc7-CIO_OXX7i1IkB9fYuzK1RmtvppvHaYKrz_V3O7CyhybRbZ2-trsF0cw0ATJTL69ObusEI0i-EIO_j6OSZ2OiCx69zewCNLZha3h8sKe6);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<!-- Grain texture for tactile feel -->
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- Navigation suppressed for focused journey success state -->
+<main class="min-h-screen flex flex-col items-center justify-center px-6 md:px-24 py-12 relative overflow-hidden">
+<!-- Ambient Background Element -->
+<div class="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[30rem] h-[30rem] bg-secondary/5 rounded-full blur-[100px] -z-10"></div>
+<div class="max-w-2xl w-full text-center space-y-12">
+<!-- Success Icon/Illustration -->
+<div class="relative inline-block">
+<div class="w-32 h-32 md:w-40 md:h-40 bg-surface-container-low rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+<span class="material-symbols-outlined text-primary text-6xl md:text-7xl font-light" style="font-variation-settings: 'FILL' 0, 'wght' 200;">local_drink</span>
+</div>
+<!-- Subtle steam-like element -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 opacity-40">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'wght' 100;">air</span>
+</div>
+</div>
+<!-- Content -->
+<div class="space-y-4">
+<h1 class="font-headline text-4xl md:text-5xl lg:text-6xl text-primary tracking-tight leading-tight">
+                    Your Journey Begins
+                </h1>
+<p class="text-on-surface/60 text-lg md:text-xl max-w-md mx-auto leading-relaxed">
+                    A space has been prepared for you. We look forward to sharing this ritual at Moso Tea.
+                </p>
+</div>
+<!-- Booking Details Card -->
+<div class="bg-surface-container-low/50 backdrop-blur-sm p-8 md:p-12 rounded-xl relative group overflow-hidden">
+<!-- Decorative border-variant -->
+<div class="absolute inset-0 border border-outline-variant/15 rounded-xl pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+<div class="space-y-2">
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface/40 font-semibold">Date</p>
+<p class="font-headline text-xl text-primary">October 24, 2024</p>
+</div>
+<div class="space-y-2">
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface/40 font-semibold">Time</p>
+<p class="font-headline text-xl text-primary">14:00 — 15:30</p>
+</div>
+<div class="space-y-2">
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface/40 font-semibold">Guests</p>
+<p class="font-headline text-xl text-primary">2 Travelers</p>
+</div>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant/10 text-center">
+<div class="flex items-center justify-center gap-2 text-secondary/70">
+<span class="material-symbols-outlined text-sm">mail</span>
+<p class="text-sm font-medium tracking-wide">A confirmation ritual has been sent to your inbox.</p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="pt-8">
+<a class="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-medium tracking-wide hover:shadow-xl hover:shadow-primary/10 transition-all duration-700 ease-out-expo group" href="#">
+<span>Return Home</span>
+<span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform duration-500">arrow_right_alt</span>
+</a>
+<!-- <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 text-on-surface/40">
+<button class="text-sm hover:text-primary transition-colors duration-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">calendar_add_on</span>
+                        Add to Calendar
+                    </button>
+<span class="hidden md:block w-1 h-1 bg-outline-variant/40 rounded-full"></span>
+<button class="text-sm hover:text-primary transition-colors duration-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">share</span>
+                        Share Experience
+                    </button>
+</div> -->
+</div>
+</div>
+<!-- Footer Logo (Minimal) -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-30">
+<p class="font-headline italic text-xl tracking-tighter text-primary">The Art of Presence</p>
+</div>
+</main>
+<!-- Contextual Aesthetic Elements (Bento-style glimpses) -->
+<div class="hidden lg:block fixed left-12 top-1/2 -translate-y-1/2 space-y-24 opacity-20 pointer-events-none">
+<div class="w-32 h-48 rounded-full overflow-hidden">
+<img alt="Tea leaves in a bowl" class="w-full h-full object-cover grayscale" data-alt="Close up of dried tea leaves in ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWBwI8fKFVfhIJaHPeNxJAl8O5TL3o6JHV4CEbqRcD03ulUjfItrF923BCJ8_NAbbzIUEXvj9xA58O0x-9ZcNZV5zDswL14qhTflShErPFwl1Iq3vfY-drhmbSZ7-P4ehn488SFEpms48nfaGSlLLvFHfBji5by835ghcJ6xdlfkNHPdLxauksOfK1YODTEtGjDWufcGhK-27T_XpZfj_MqgiBv8s-KIhQF1VfLJYMJWMSq3A7oO-2fewttZ--l-Dbx_bdQiPdqVag"/>
+</div>
+<div class="w-24 h-24 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/40 text-3xl">eco</span>
+</div>
+</div>
+<div class="hidden lg:block fixed right-12 top-1/2 -translate-y-1/2 space-y-24 opacity-20 pointer-events-none">
+<div class="w-24 h-24 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/40 text-3xl">water_drop</span>
+</div>
+<div class="w-32 h-48 rounded-full overflow-hidden">
+<img alt="Bamboo forest" class="w-full h-full object-cover grayscale" data-alt="Soft focused green bamboo forest landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwjQl52rXfWZ3cko4ZlazGXybC9MUqBgIInt5rEo-t0CNSlRBfreiM2n15wJyvTrieJBcNZ-nH1ySYBEJKjtuPUNlkdbrFSVmhl8qZCDk1DqGp4r0Hjwdy56Ue1SeC2LROBiFd_7Okzx7JYH8xr3JzYI5FyCVCVezWMRCfdbeBhp6yCWvxmyMtssZGYDOR_6aKu-hJ13oHJ358Ea6kiy-4t61NZiUV2WQ4sA5ukO_KZaaQ6rCiIfdDcogCZCF7Mg1xZcpAHNeyiWOo"/>
+</div>
+</div>
+</body></html>

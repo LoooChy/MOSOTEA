@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moso Admin | Content Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#241a06",
+                        "surface-dim": "#dcdad5",
+                        "secondary-fixed-dim": "#d8c4a5",
+                        "tertiary": "#382c1f",
+                        "on-background": "#1c1c19",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-primary-fixed-variant": "#2f4e33",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#03210b",
+                        "primary-container": "#2d4b31",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#424841",
+                        "outline": "#737971",
+                        "inverse-on-surface": "#f3f0eb",
+                        "on-surface": "#1c1c19",
+                        "secondary-fixed": "#f5e0c0",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "outline-variant": "#c2c8bf",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#c1ae9c",
+                        "on-primary-container": "#98ba99",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#4f4234",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface": "#fcf9f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#ebe8e3",
+                        "primary-fixed": "#c8ecc8",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0ede8",
+                        "primary": "#17341c",
+                        "inverse-surface": "#31302d",
+                        "inverse-primary": "#adcfad",
+                        "surface-container-low": "#f6f3ee",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "secondary": "#6c5c43",
+                        "on-tertiary-fixed": "#241a0e",
+                        "surface-bright": "#fcf9f4",
+                        "on-secondary-container": "#706047",
+                        "secondary-container": "#f2ddbd",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#47664a",
+                        "background": "#fcf9f4",
+                        "on-secondary-fixed-variant": "#53452d"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-expo {
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .bg-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<div class="flex min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-72 border-r border-on-surface/5 bg-[#f6f3ee] dark:bg-stone-950 flex flex-col py-8 sticky top-0">
+<div class="px-8 mb-12">
+<h1 class="font-headline text-xl text-primary">Moso Admin</h1>
+<p class="font-label text-xs text-on-surface/50 tracking-widest uppercase mt-1">Tea Master Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-on-surface/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="text-on-surface/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Customers
+                </a>
+<!-- Active Navigation: Content Management -->
+<a class="bg-primary text-surface rounded-xl mx-4 my-1 px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-out-expo font-label text-sm tracking-wide shadow-lg shadow-primary/10" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+                    Content Management
+                </a>
+<a class="text-on-surface/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">package_2</span>
+                    Orders
+                </a>
+<a class="text-on-surface/70 mx-4 my-1 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+                    Analytics
+                </a>
+</nav>
+<div class="mt-auto px-4 space-y-1 border-t border-on-surface/5 pt-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 px-4 rounded-full flex items-center justify-center gap-2 mb-6 font-label font-bold text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Entry
+                </button>
+<a class="text-on-surface/70 mx-0 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="text-on-surface/70 mx-0 px-4 py-3 flex items-center gap-3 hover:bg-[#ebe8e3] rounded-xl transition-all duration-300 hover:translate-x-1 ease-out-expo font-label text-sm" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                    Support
+                </a>
+<div class="flex items-center gap-3 px-4 py-6 mt-2">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Admin user profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAiCL1zTANRZX1734THQzZH3aZMEfbgh6NvEqTkj7e7ECW-4cYdatV2X5Vv6IvADlM_OUpbjqAhlH7Yl8u5bK8FY0FtgMA4EzW4eTTnnBHmE4XMuCZO1b368zavnK6SvS5JDwa8BrL36AysId-wSUnZD55CRdL5-VkxkUP1EH_cwwpKab3bbK2NPb9eie-WfWO4IFxScA1QYqlqiHWgAgV0AZFq32X-Iva_YRNWiS_XPeU73PSvjYzblvGWvfgt5rKvlz03KXgsRzj"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Chen Wei</span>
+<span class="text-[10px] text-on-surface/50">Admin User Profile</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 bg-surface relative overflow-hidden">
+<div class="absolute inset-0 bg-grain pointer-events-none"></div>
+<!-- Top Header -->
+<header class="flex justify-between items-center px-12 py-8 bg-surface/80 backdrop-blur-xl sticky top-0 z-10">
+<div class="space-y-1">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-primary italic">Content Management</h2>
+<p class="text-on-surface/60 font-label text-sm uppercase tracking-widest">Editing Public Website</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-label w-48" placeholder="Search pages..." type="text"/>
+</div>
+<button class="bg-surface-container-highest text-primary font-label text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-full hover:bg-surface-container-high transition-colors">
+                        View Live Site
+                    </button>
+</div>
+</header>
+<!-- Page Selection Tabs -->
+<div class="px-12 py-4 flex gap-8 border-b border-on-surface/5">
+<button class="font-label text-xs font-bold tracking-widest uppercase text-primary border-b-2 border-primary pb-3">Homepage</button>
+<button class="font-label text-xs font-medium tracking-widest uppercase text-on-surface/40 hover:text-primary transition-colors pb-3">About Us</button>
+<button class="font-label text-xs font-medium tracking-widest uppercase text-on-surface/40 hover:text-primary transition-colors pb-3">Experience</button>
+<button class="font-label text-xs font-medium tracking-widest uppercase text-on-surface/40 hover:text-primary transition-colors pb-3">Gardens</button>
+<button class="font-label text-xs font-medium tracking-widest uppercase text-on-surface/40 hover:text-primary transition-colors pb-3">The Shop</button>
+</div>
+<!-- Bento Content Grid -->
+<div class="px-12 py-12 max-w-7xl">
+<div class="grid grid-cols-12 gap-8">
+<!-- Section: Homepage Banner (Wide Asymmetric) -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-xl p-8 relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Primary Hero</span>
+<h3 class="font-headline text-2xl mt-4">Homepage Banner</h3>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg flex items-center gap-2 text-xs font-bold tracking-widest uppercase hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                Edit
+                            </button>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<div>
+<label class="text-[10px] text-on-surface/50 font-bold uppercase tracking-widest block mb-1">Headline Text</label>
+<p class="font-headline italic text-lg text-primary">The Art of Presence: Taiwanese Tradition Meets New Zealand Soul.</p>
+</div>
+<div>
+<label class="text-[10px] text-on-surface/50 font-bold uppercase tracking-widest block mb-1">CTA Label</label>
+<p class="font-label text-sm">Book Ceremony</p>
+</div>
+</div>
+<div class="relative rounded-lg overflow-hidden h-40 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Traditional tea ceremony overhead shot with ceramic bowls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHpa17_sV6ihauPco9H31ZQgiahZ_BZBub4LRtE0l36jMNqzfY-jbP4wyEX6pD1Hfwdk7qYF_gRrb1I1Nv8sgFhAOM8_fHXXwh1Dglkb6g2H2M6Kbkinh-BhuqBdcD1CZ5lyruV-DN1lfPhK2X87VeaVlTIUTEGQH0t4oEk7np4a-UBpRi3QZdE7wOtMza0evHsTZwwSwyBhcPb2omo78Oo_GPlPXILpjf1uJuwKa4XYeWmkb8WGG3KF8ns-WV7-9fAop8Y0Y3bLjj"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="bg-white/90 text-primary p-2 rounded-full shadow-lg cursor-pointer">
+<span class="material-symbols-outlined">image</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: About Text (Vertical Sidebar) -->
+<section class="col-span-12 lg:col-span-4 bg-surface-container-high rounded-xl p-8 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-xl">About Text</h3>
+<button class="text-primary hover:underline underline-offset-4 text-xs font-bold tracking-widest uppercase">
+                                Edit
+                            </button>
+</div>
+<div class="flex-1">
+<label class="text-[10px] text-on-surface/50 font-bold uppercase tracking-widest block mb-2">Introduction</label>
+<p class="text-on-surface/70 text-sm leading-relaxed font-body">
+                                Founded in the misty hills of Nantou and reimagined in the southern alps of Aotearoa, Moso is a bridge between worlds. We cultivate silence through the ritual of the leaf...
+                            </p>
+</div>
+<div class="mt-8 pt-6 border-t border-on-surface/5">
+<div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-on-surface/30">
+<span>Word Count: 42</span>
+<span>Last Updated: 2d ago</span>
+</div>
+</div>
+</section>
+<!-- Section: Workshop Details (Rich Content) -->
+<section class="col-span-12 lg:col-span-7 bg-surface-container-low rounded-xl p-8">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline text-2xl">Workshop Details</h3>
+<p class="text-on-surface/50 text-xs mt-1">Managing the "Coming Up" section</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg flex items-center gap-2 text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                Edit
+                            </button>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 items-center p-4 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Green tea leaves in bamboo basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg3_mcwskU63shCvlDh_QQkaFr9o5pUxMMnfmg0Ihmhb_v60ieG3hK1hmbIrX2UrB0jqhG8xPd7co6-F2oX1TpB048aOQVDxPRJlIov3WtbMWD9pEqp9xA8F27Os4CRkOC4YkG3FxelOgGNQVf7d8H8IA-ldE6fDKi1J0gpu23wHjmb9HLm_CFNxeJ-Obm8Ljf7X5JPyTrPkdufAY7iNFRB1a6yTSJMe4RJtt2DqgknZeam6xJR3e9vuxzqC3-z6MkM0_if4lMa8dA"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Gongfu Tea Basics</h4>
+<p class="text-xs text-on-surface/60">Saturday, Nov 12 • 2:00 PM</p>
+</div>
+<span class="material-symbols-outlined text-on-surface/20">drag_indicator</span>
+</div>
+<div class="flex gap-6 items-center p-4 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Steaming hot water poured into teapot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxVSb79QsMqOknltf-NBc8mcfTioBBua0hd0K6SSnaIb7GMJy3znrLvM3YOJdWw2fP1Vj69l_cxv2ppjPm_LFthn9rFzJ3TzzpK8O3t3Y5gr07Ua-DJmnMDe28PRia7S_vG63-GPRU9JLl43Ef_xX57aAyBliqY-O6pMI6s_y5iUTwBt6t3tJVsLOgb8dznGgYDslPnwri_ugNtcdKUnt60-169EOU0oqVvocvJNhe8EHnRcG_z5R99aZHvpRBP9FAh1nlJK7_6Dj"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">The Zen of Water</h4>
+<p class="text-xs text-on-surface/60">Sunday, Nov 20 • 10:00 AM</p>
+</div>
+<span class="material-symbols-outlined text-on-surface/20">drag_indicator</span>
+</div>
+</div>
+</section>
+<!-- Section: FAQ Entries (Accents) -->
+<section class="col-span-12 lg:col-span-5 bg-[#ebe8e3] rounded-xl p-8 relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-xl">FAQ Entries</h3>
+<button class="bg-primary/5 hover:bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="bg-surface/50 p-4 rounded-lg flex justify-between items-center group cursor-pointer hover:bg-surface transition-colors">
+<span class="text-xs font-medium">How should I store Oolong?</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">edit</span>
+</div>
+<div class="bg-surface/50 p-4 rounded-lg flex justify-between items-center group cursor-pointer hover:bg-surface transition-colors">
+<span class="text-xs font-medium">Shipping to Christchurch?</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">edit</span>
+</div>
+<div class="bg-surface/50 p-4 rounded-lg flex justify-between items-center group cursor-pointer hover:bg-surface transition-colors">
+<span class="text-xs font-medium">Brewing temperatures?</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">edit</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Global Save/Action Bar -->
+<div class="fixed bottom-12 right-12 flex items-center gap-4">
+<button class="bg-surface shadow-2xl shadow-black/10 text-primary border border-primary/10 px-8 py-4 rounded-full font-label text-xs font-bold tracking-widest uppercase hover:bg-surface-container-low transition-all">
+                    Discard Changes
+                </button>
+<button class="bg-gradient-to-br from-primary to-primary-container shadow-2xl shadow-primary/30 text-on-primary px-10 py-4 rounded-full font-label text-xs font-bold tracking-widest uppercase hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">publish</span>
+                    Publish Site
+                </button>
+</div>
+</main>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-primary dark:bg-black border-t border-white/10 py-24 px-12 flex flex-col md:flex-row justify-between items-center gap-8 relative z-20">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline text-lg text-surface">Moso Tea</span>
+<p class="font-label text-xs uppercase tracking-widest text-surface/60 max-w-sm text-center md:text-left">
+                © 2024 Moso Tea. Cultivating presence from Taiwan to New Zealand.
+            </p>
+</div>
+<div class="flex gap-12">
+<a class="font-label text-xs uppercase tracking-widest text-surface/60 hover:text-surface transition-colors" href="#">Sourcing</a>
+<a class="font-label text-xs uppercase tracking-widest text-surface/60 hover:text-surface transition-colors" href="#">Privacy</a>
+<a class="font-label text-xs uppercase tracking-widest text-surface/60 hover:text-surface transition-colors" href="#">Terms</a>
+<a class="font-label text-xs uppercase tracking-widest text-surface/60 hover:text-surface transition-colors" href="#">Brewing Guide</a>
+</div>
+</footer>
+</body></html>
