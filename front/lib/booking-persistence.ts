@@ -195,27 +195,6 @@ export function normalizeBookingPayload(raw: BookingPersistPayloadRaw): Normaliz
   };
 }
 
-async function ensureWorkshopCatalogEntry(
-  client: SupabaseClient,
-  payload: NormalizedBookingPayload
-): Promise<void> {
-  const meta = EXPERIENCE_META[payload.experienceKey];
-  const { error } = await client.from("workshop_catalog").upsert(
-    {
-      key: payload.experienceKey,
-      title: meta.title,
-      unit_price: meta.unitPrice,
-      default_capacity: DEFAULT_CAPACITY,
-      active: true,
-      sort_order: payload.experienceKey === "authentic" ? 1 : payload.experienceKey === "brewing" ? 2 : 3,
-    },
-    { onConflict: "key" }
-  );
-  if (error) {
-    throw new BookingPersistenceError(error.message, 500, "UPSERT_WORKSHOP_FAILED");
-  }
-}
-
 async function findOrCreateSession(
   client: SupabaseClient,
   payload: NormalizedBookingPayload
@@ -265,8 +244,6 @@ export async function persistBooking(
   client: SupabaseClient,
   payload: NormalizedBookingPayload
 ): Promise<PersistBookingResult> {
-  await ensureWorkshopCatalogEntry(client, payload);
-
   const { data: existingBooking, error: existingError } = await client
     .from("bookings")
     .select("id,booking_ref,session_id,guests,total_amount")
@@ -369,4 +346,3 @@ export async function setBookingMailStatus(
     throw new BookingPersistenceError(error.message, 500, "UPDATE_MAIL_STATUS_FAILED");
   }
 }
-
