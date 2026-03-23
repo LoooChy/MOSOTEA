@@ -59,6 +59,7 @@ type SessionPatchResponse = {
   booked: number;
   total: number;
   status: BookingStatus;
+  warning?: string;
   error?: string;
 };
 
@@ -855,12 +856,15 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
       return;
     }
     try {
-      await fetchJson<SessionPatchResponse>(`/api/admin/bookings/${cancellingItem.sessionId}`, {
+      const result = await fetchJson<SessionPatchResponse>(`/api/admin/bookings/${cancellingItem.sessionId}`, {
         method: "PATCH",
         body: JSON.stringify({
           action: "cancel",
         }),
       });
+      if (result.warning && result.warning.trim().length > 0) {
+        window.alert(result.warning);
+      }
       setCancelSessionId(null);
       setRefreshVersion((value) => value + 1);
     } catch (error) {

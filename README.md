@@ -60,6 +60,7 @@ Additional variables:
 
 - `front`: `RESEND_API_KEY`, `RESEND_FROM`, `RESEND_REPLY_TO` (optional)
 - `admin`: `ADMIN_API_TOKEN` (optional but recommended for external API callers)
+- `admin` (booking cancellation email): `RESEND_API_KEY`, `RESEND_FROM`, `RESEND_REPLY_TO` (optional)
 
 ### 3) Front API Endpoints
 
