@@ -5,6 +5,7 @@ import { BookingJourneyEnhancer } from "@/components/booking-journey-enhancer";
 import { BookingValidateEnhancer } from "@/components/booking-validate-enhancer";
 import { BookingConfirmEnhancer } from "@/components/booking-confirm-enhancer";
 import { BookingSuccessEnhancer } from "@/components/booking-success-enhancer";
+import { WorkshopLinkEnhancer } from "@/components/workshop-link-enhancer";
 
 type DesignRendererProps = {
   document: DesignDocument;
@@ -38,6 +39,7 @@ export function DesignRenderer({ document, pathname }: DesignRendererProps) {
       <BookingValidateEnhancer enabled={enableBookingValidateEnhancer} />
       <BookingConfirmEnhancer enabled={enableBookingConfirmEnhancer} />
       <BookingSuccessEnhancer enabled={enableBookingSuccessEnhancer} />
+      <WorkshopLinkEnhancer pathname={pathname} />
     </>
   );
 }
