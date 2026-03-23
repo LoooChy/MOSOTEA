@@ -30,7 +30,7 @@ type BookingRecipientRow = {
 };
 
 type UpdatePayload = {
-  action?: "cancel" | "edit";
+  action?: "cancel" | "edit" | "complete";
   bookedCount?: number;
 };
 
@@ -99,7 +99,6 @@ function buildCancellationMail(
     `Dear ${booking.full_name},`,
     "",
     "We are very sorry to inform you that this event has been cancelled, and we look forward to meeting you next time.",
-    "非常遗憾地通知您，本次活动已取消，期待我们下次相遇。",
     "",
     `Booking Reference: ${booking.booking_ref}`,
     `Experience: ${sessionTitle}`,
@@ -154,8 +153,8 @@ export async function PATCH(
   }
 
   const action = payload.action;
-  if (action !== "cancel" && action !== "edit") {
-    return NextResponse.json({ error: "action must be cancel or edit." }, { status: 400 });
+  if (action !== "cancel" && action !== "edit" && action !== "complete") {
+    return NextResponse.json({ error: "action must be cancel, edit or complete." }, { status: 400 });
   }
 
   try {
@@ -177,6 +176,15 @@ export async function PATCH(
     if (action === "cancel") {
       nextBooked = 0;
       nextStatus = "cancelled";
+    } else if (action === "complete") {
+      if (session.status === "cancelled") {
+        return NextResponse.json(
+          { error: "Cancelled sessions cannot be marked as completed." },
+          { status: 409 }
+        );
+      }
+      nextBooked = session.booked_count;
+      nextStatus = "completed";
     } else {
       nextBooked = clampBookedCount(payload.bookedCount ?? session.booked_count);
       if (nextStatus !== "cancelled" || nextBooked > 0) {

@@ -444,6 +444,13 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
 
     tbody.innerHTML = upcomingItems
       .map((item) => {
+        const disableCancelAndComplete = item.status === "cancelled" || item.status === "completed";
+        const cancelDisabledClass = disableCancelAndComplete
+          ? "opacity-40 pointer-events-none"
+          : "hover:opacity-90";
+        const completeDisabledClass = disableCancelAndComplete
+          ? "opacity-40 pointer-events-none"
+          : "hover:opacity-90";
         return `
           <tr class="group hover:bg-surface-container-low transition-colors cursor-pointer" data-session-id="${escapeHtml(item.sessionId)}">
             <td class="px-8 py-6">
@@ -475,9 +482,17 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
                   type="button"
                   data-action="cancel"
                   data-session-id="${escapeHtml(item.sessionId)}"
-                  class="px-3 py-1.5 rounded-full bg-error-container text-on-error-container text-xs font-label font-bold hover:opacity-90 transition-opacity"
+                  class="px-3 py-1.5 rounded-full bg-error-container text-on-error-container text-xs font-label font-bold transition-opacity ${cancelDisabledClass}"
                 >
                   取消
+                </button>
+                <button
+                  type="button"
+                  data-action="complete"
+                  data-session-id="${escapeHtml(item.sessionId)}"
+                  class="px-3 py-1.5 rounded-full bg-primary text-white text-xs font-label font-bold transition-opacity ${completeDisabledClass}"
+                >
+                  完成
                 </button>
                 <button
                   type="button"
@@ -512,6 +527,25 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
         if (action === "cancel") {
           setEditingSessionId(null);
           setCancelSessionId(sessionId);
+          return;
+        }
+        if (action === "complete") {
+          setEditingSessionId(null);
+          setCancelSessionId(null);
+          void (async () => {
+            try {
+              await fetchJson<SessionPatchResponse>(`/api/admin/bookings/${sessionId}`, {
+                method: "PATCH",
+                body: JSON.stringify({
+                  action: "complete",
+                }),
+              });
+              setRefreshVersion((value) => value + 1);
+            } catch (error) {
+              const message = error instanceof Error ? error.message : "Failed to complete booking.";
+              window.alert(message);
+            }
+          })();
           return;
         }
         const selected = upcomingItems.find((item) => item.sessionId === sessionId);
