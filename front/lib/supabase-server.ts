@@ -17,17 +17,39 @@ function parseJwtRole(token: string): string | null {
   }
 }
 
+function validateServerKey(serviceRoleKey: string): string | null {
+  const key = serviceRoleKey.trim();
+
+  // Supabase modern server-side secret key format.
+  if (key.startsWith("sb_secret_")) {
+    return null;
+  }
+
+  // Reject explicit client-side key format.
+  if (key.startsWith("sb_publishable_")) {
+    return "SUPABASE_SERVICE_ROLE_KEY is using a publishable key. Use sb_secret_... or a legacy service_role JWT.";
+  }
+
+  // Legacy JWT key format.
+  const role = parseJwtRole(key);
+  if (role === "service_role") {
+    return null;
+  }
+  if (role === "anon" || role === "authenticated") {
+    return `SUPABASE_SERVICE_ROLE_KEY is using JWT role "${role}". Use role "service_role".`;
+  }
+  return 'SUPABASE_SERVICE_ROLE_KEY format is invalid. Use sb_secret_... or a legacy JWT with role "service_role".';
+}
+
 function getSupabaseConfig() {
   const url = process.env.SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceRoleKey) {
     return null;
   }
-  const role = parseJwtRole(serviceRoleKey);
-  if (role !== "service_role") {
-    throw new Error(
-      `SUPABASE_SERVICE_ROLE_KEY is misconfigured. Expected JWT role "service_role" but received "${role ?? "unknown"}".`
-    );
+  const keyError = validateServerKey(serviceRoleKey);
+  if (keyError) {
+    throw new Error(keyError);
   }
   return { url, serviceRoleKey };
 }
