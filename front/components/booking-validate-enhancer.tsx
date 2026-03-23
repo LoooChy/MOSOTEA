@@ -75,6 +75,11 @@ export function BookingValidateEnhancer({ enabled }: BookingValidateEnhancerProp
     if (!enabled) {
       return;
     }
+    const completedBookingRef = window.localStorage.getItem("moso:booking-completed-ref");
+    if (completedBookingRef) {
+      window.location.replace("/");
+      return;
+    }
 
     const flow = parseBookingFlow(window.location.search);
     const experience = EXPERIENCE_META[flow.experience] ?? EXPERIENCE_META.authentic;

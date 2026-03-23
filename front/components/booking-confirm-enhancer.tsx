@@ -71,8 +71,19 @@ export function BookingConfirmEnhancer({ enabled }: BookingConfirmEnhancerProps)
     if (!enabled) {
       return;
     }
+    const completedBookingRef = window.localStorage.getItem("moso:booking-completed-ref");
+    if (completedBookingRef) {
+      window.location.replace("/");
+      return;
+    }
 
     const flow = parseBookingFlow(window.location.search);
+    const bookingRef =
+      flow.bookingRef.trim().length > 0
+        ? flow.bookingRef.trim()
+        : `MOSO-${Date.now()}-${Math.floor(Math.random() * 1000)
+            .toString()
+            .padStart(3, "0")}`;
     const experience = EXPERIENCE_META[flow.experience] ?? EXPERIENCE_META.authentic;
     const dateTimeText = formatDateTimeSummary(flow.date, flow.time);
 
@@ -240,6 +251,7 @@ export function BookingConfirmEnhancer({ enabled }: BookingConfirmEnhancerProps)
     const syncConfirmHref = () => {
       const nextFlow = {
         ...flow,
+        bookingRef,
         fullName: fullNameInput.value,
         email: emailInput.value,
         phone: phoneInput.value,
@@ -328,8 +340,17 @@ export function BookingConfirmEnhancer({ enabled }: BookingConfirmEnhancerProps)
       touched.fullName = true;
       touched.email = true;
       touched.phone = true;
-      if (!validateForm(true)) {
+      const isValid = validateForm(true);
+      if (!isValid) {
         event.preventDefault();
+        return;
+      }
+
+      const currentTarget = event.currentTarget as HTMLElement | null;
+      if (currentTarget instanceof HTMLAnchorElement && currentTarget.href) {
+        // Use replace to prevent navigating back to confirm and resubmitting quickly.
+        event.preventDefault();
+        window.location.replace(currentTarget.href);
       }
     };
 

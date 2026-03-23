@@ -1,5 +1,5 @@
 ```markdown
-# Design System Specification: The Art of Presence
+# Design System Specification: MOSO TEA
 
 ## 1. Overview & Creative North Star
 **Creative North Star: "The Living Parchment"**

@@ -1,5 +1,7 @@
 import { DesignDocument } from "@/lib/design-loader";
 import { AdminSidebar } from "@/components/admin-sidebar";
+import { AdminAuthGuard } from "@/components/admin-auth-guard";
+import { AdminBookingsEnhancer } from "@/components/admin-bookings-enhancer";
 
 type DesignRendererProps = {
   document: DesignDocument;
@@ -11,6 +13,8 @@ export function DesignRenderer({ document, pathname, withSidebar }: DesignRender
   const bodyClass = document.bodyClass || "";
   return (
     <>
+      <AdminAuthGuard pathname={pathname} />
+      <AdminBookingsEnhancer pathname={pathname} />
       {document.styles.map((style, index) => (
         <style
           key={`inline-style-${index}`}

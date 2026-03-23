@@ -5,6 +5,7 @@ export type BookingFlowParams = {
   guests: number;
   date: string | null;
   time: string | null;
+  bookingRef: string;
   fullName: string;
   email: string;
   phone: string;
@@ -41,6 +42,7 @@ export function parseBookingFlow(search: string): BookingFlowParams {
     guests: clampGuests(params.get("guests")),
     date: params.get("date"),
     time: params.get("time"),
+    bookingRef: params.get("bookingRef") ?? "",
     fullName: params.get("fullName") ?? "",
     email: params.get("email") ?? "",
     phone: params.get("phone") ?? "",
@@ -83,6 +85,9 @@ export function buildBookingHref(pathname: string, flow: BookingFlowParams): str
   const params = new URLSearchParams();
   params.set("experience", flow.experience);
   params.set("guests", String(flow.guests));
+  if (flow.bookingRef.trim().length > 0) {
+    params.set("bookingRef", flow.bookingRef.trim());
+  }
   if (flow.date) {
     params.set("date", flow.date);
   }

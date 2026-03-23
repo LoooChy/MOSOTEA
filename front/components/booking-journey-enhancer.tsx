@@ -122,6 +122,19 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
     if (!enabled) {
       return;
     }
+    const completedBookingKey = "moso:booking-completed-ref";
+    const navigationEntry = window.performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+    const navigationType = navigationEntry?.type ?? "navigate";
+    const completedBookingRef = window.localStorage.getItem(completedBookingKey);
+    if (completedBookingRef) {
+      if (navigationType === "back_forward") {
+        window.location.replace("/");
+        return;
+      }
+      window.localStorage.removeItem(completedBookingKey);
+    }
 
     const heading = Array.from(document.querySelectorAll("h2")).find((node) =>
       /choose your journey/i.test(node.textContent ?? "")

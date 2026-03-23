@@ -4,7 +4,7 @@ import { loadDesignDocument } from "@/lib/design-loader";
 import { resolveFrontRoute } from "@/lib/design-routes";
 
 export const metadata: Metadata = {
-  title: "Moso Tea | The Art of Presence",
+  title: "Moso Tea | MOSO TEA",
 };
 
 export default async function HomePage() {

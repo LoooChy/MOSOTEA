@@ -5,7 +5,7 @@ export type DesignRoute = {
 };
 
 export const FRONT_ROUTES: DesignRoute[] = [
-  { path: "/", file: "stitch/moso_tea_homepage/code.html", label: "Moso Tea | The Art of Presence" },
+  { path: "/", file: "stitch/moso_tea_homepage/code.html", label: "Moso Tea | MOSO TEA" },
   { path: "/about", file: "stitch/about_us_desktop/code.html", label: "About Us | Moso Tea" },
   { path: "/our-story", file: "stitch/about_us_desktop/code.html", label: "Our Story | Moso Tea" },
   { path: "/workshops", file: "stitch/workshops_listing/code.html", label: "Workshops | Moso Tea" },

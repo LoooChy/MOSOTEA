@@ -24,7 +24,7 @@ const marketingItems: FrontNavItem[] = [
 ];
 
 const sharedConfig: FrontNavConfig = {
-  brandLabel: "The Art of Presence",
+  brandLabel: "MOSO TEA",
   brandHref: "/",
   items: marketingItems,
   cta: {
