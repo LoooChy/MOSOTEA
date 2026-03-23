@@ -444,13 +444,16 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
 
     tbody.innerHTML = upcomingItems
       .map((item) => {
-        const disableCancelAndComplete = item.status === "cancelled" || item.status === "completed";
-        const cancelDisabledClass = disableCancelAndComplete
+        const disableActions = item.status === "cancelled" || item.status === "completed";
+        const cancelDisabledClass = disableActions
           ? "opacity-40 pointer-events-none"
           : "hover:opacity-90";
-        const completeDisabledClass = disableCancelAndComplete
+        const completeDisabledClass = disableActions
           ? "opacity-40 pointer-events-none"
           : "hover:opacity-90";
+        const editDisabledClass = disableActions
+          ? "opacity-40 pointer-events-none"
+          : "hover:bg-surface-container-highest";
         return `
           <tr class="group hover:bg-surface-container-low transition-colors cursor-pointer" data-session-id="${escapeHtml(item.sessionId)}">
             <td class="px-8 py-6">
@@ -476,7 +479,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
             <td class="px-8 py-6">
               ${getStatusMarkup(item.status)}
             </td>
-            <td class="px-8 py-6 text-right">
+            <td class="px-8 py-6 text-right" data-cell="actions">
               <div class="flex items-center justify-end gap-2">
                 <button
                   type="button"
@@ -498,7 +501,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
                   type="button"
                   data-action="edit"
                   data-session-id="${escapeHtml(item.sessionId)}"
-                  class="px-3 py-1.5 rounded-full bg-surface-container-high text-primary text-xs font-label font-bold hover:bg-surface-container-highest transition-colors"
+                  class="px-3 py-1.5 rounded-full bg-surface-container-high text-primary text-xs font-label font-bold transition-colors ${editDisabledClass}"
                 >
                   编辑
                 </button>
@@ -524,6 +527,14 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
           return;
         }
         const action = actionButton.getAttribute("data-action");
+        const selected = upcomingItems.find((item) => item.sessionId === sessionId);
+        if (!selected) {
+          return;
+        }
+        const actionDisabled = selected.status === "cancelled" || selected.status === "completed";
+        if (actionDisabled) {
+          return;
+        }
         if (action === "cancel") {
           setEditingSessionId(null);
           setCancelSessionId(sessionId);
@@ -548,13 +559,14 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
           })();
           return;
         }
-        const selected = upcomingItems.find((item) => item.sessionId === sessionId);
-        if (!selected) {
-          return;
-        }
         setCancelSessionId(null);
         setEditingSessionId(sessionId);
         setEditingGuests(selected.booked);
+        return;
+      }
+
+      const actionCell = target.closest<HTMLTableCellElement>("td[data-cell='actions']");
+      if (actionCell) {
         return;
       }
 

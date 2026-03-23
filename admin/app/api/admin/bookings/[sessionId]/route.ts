@@ -170,6 +170,18 @@ export async function PATCH(
     if (!session) {
       return NextResponse.json({ error: "Session not found." }, { status: 404 });
     }
+    if (session.status === "cancelled") {
+      return NextResponse.json(
+        { error: "Cancelled sessions cannot be updated." },
+        { status: 409 }
+      );
+    }
+    if (session.status === "completed") {
+      return NextResponse.json(
+        { error: "Completed sessions cannot be updated." },
+        { status: 409 }
+      );
+    }
 
     let nextBooked = session.booked_count;
     let nextStatus = session.status;
