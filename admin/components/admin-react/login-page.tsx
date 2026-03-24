@@ -14,7 +14,7 @@ function markAuthenticated() {
 }
 
 export function LoginPage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,9 +33,9 @@ export function LoginPage() {
     if (submitting) {
       return;
     }
-    const username = email.trim();
+    const account = username.trim();
     const passwordValue = password.trim();
-    if (username.length === 0 || passwordValue.length === 0) {
+    if (account.length === 0 || passwordValue.length === 0) {
       setError("Please enter account and password.");
       return;
     }
@@ -48,7 +48,7 @@ export function LoginPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password: passwordValue }),
+        body: JSON.stringify({ username: account, password: passwordValue }),
       });
       if (!response.ok) {
         let message = "Invalid account or password.";
@@ -107,19 +107,20 @@ export function LoginPage() {
             <div className="space-y-2">
               <label
                 className="font-label text-xs uppercase tracking-[0.15em] text-secondary font-semibold ml-1"
-                htmlFor="email"
+                htmlFor="username"
               >
-                Email Address
+                Account
               </label>
               <div className="relative group">
                 <input
-                  id="email"
+                  id="username"
                   className={`w-full bg-surface-container-low border-none rounded-lg py-4 pl-4 pr-12 text-on-surface font-body focus:ring-1 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300 placeholder:text-outline-variant/60 ${inputErrorClass}`}
-                  placeholder="admin@mosotea.nz"
-                  type="email"
-                  value={email}
+                  placeholder="mosotea"
+                  type="text"
+                  autoComplete="username"
+                  value={username}
                   onChange={(event) => {
-                    setEmail(event.target.value);
+                    setUsername(event.target.value);
                     if (error) {
                       setError(null);
                     }
@@ -137,7 +138,7 @@ export function LoginPage() {
                   className="font-label text-xs uppercase tracking-[0.15em] text-secondary font-semibold"
                   htmlFor="password"
                 >
-                  Security Token
+                  Password
                 </label>
                 <a
                   className="text-[10px] uppercase tracking-wider text-secondary/60 hover:text-primary transition-colors font-semibold"
@@ -197,4 +198,3 @@ export function LoginPage() {
     </div>
   );
 }
-
