@@ -973,7 +973,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
             <div className="px-6 py-5 border-b border-outline-variant/20">
               <h3 className="font-headline text-2xl text-primary">Cancel Booking</h3>
               <p className="text-sm text-on-surface-variant mt-2">
-                {cancellingItem.workshopType} ({cancellingItem.sessionId})
+                {cancellingItem.workshopType}
               </p>
             </div>
             <div className="px-6 py-6">
