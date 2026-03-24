@@ -61,7 +61,7 @@ export function AdminSidebar({ pathname }: AdminSidebarProps) {
           className="w-full flex items-center px-6 py-3 mx-2 text-left text-[#1c1c19]/70 hover:bg-[#ebe8e3] rounded-xl transition-transform duration-300 hover:translate-x-1"
         >
           <span className="material-symbols-outlined mr-3">logout</span>
-          <span className="font-label text-sm tracking-tight">注销</span>
+          <span className="font-label text-sm tracking-tight">Logout</span>
         </button>
       </div>
     </aside>

@@ -264,9 +264,6 @@ export function BookingsPage() {
                           </div>
                           <div>
                             <p className="font-semibold text-primary">{item.workshopType}</p>
-                            <p className="text-xs text-on-surface-variant/70">
-                              Session: {item.sessionId}
-                            </p>
                           </div>
                         </div>
                       </td>
@@ -294,7 +291,7 @@ export function BookingsPage() {
                               disableActions ? "opacity-40 pointer-events-none" : "hover:opacity-90"
                             }`}
                           >
-                            取消
+                            Cancel
                           </button>
                           <button
                             type="button"
@@ -308,7 +305,7 @@ export function BookingsPage() {
                               disableActions ? "opacity-40 pointer-events-none" : "hover:opacity-90"
                             }`}
                           >
-                            完成
+                            Done
                           </button>
                           <button
                             type="button"
@@ -326,7 +323,7 @@ export function BookingsPage() {
                                 : "hover:bg-surface-container-highest"
                             }`}
                           >
-                            编辑
+                            Edit
                           </button>
                         </div>
                       </td>
