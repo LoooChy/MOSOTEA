@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
 import { FrontNavConfig, FrontNavItem } from "@/lib/front-nav-config";
 
@@ -21,6 +21,18 @@ function isActive(pathname: string, item: FrontNavItem): boolean {
 
 export function FrontNavBar({ pathname, config }: FrontNavBarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isBookingPath = pathname.startsWith("/booking");
+  const headerStyle: CSSProperties = isBookingPath
+    ? {
+        top: "max(env(safe-area-inset-top), 0px)",
+        transform: "translate3d(0,0,0)",
+        WebkitTransform: "translate3d(0,0,0)",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+      }
+    : {
+        top: "max(env(safe-area-inset-top), 0px)",
+      };
 
   useEffect(() => {
     setMobileOpen(false);
@@ -42,7 +54,7 @@ export function FrontNavBar({ pathname, config }: FrontNavBarProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50" style={headerStyle}>
       <nav className="flex justify-between items-center w-full px-6 md:px-12 py-6 mx-auto bg-[#fcf9f4]/80 backdrop-blur-xl shadow-[0_40px_40px_rgba(28,28,25,0.06)]">
         <Link className="text-2xl font-serif italic tracking-tight text-primary" href={config.brandHref}>
           {config.brandLabel}
