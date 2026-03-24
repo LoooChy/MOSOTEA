@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Moso Tea Admin | Login",
 };
 
-export default function HomePage() {
+export default function LoginRoutePage() {
   return <LoginPage />;
 }
+
