@@ -163,12 +163,34 @@ function stripEmbeddedSidebar(bodyHtml: string): string {
   return bodyHtml.replace(/<aside\b[\s\S]*?<\/aside>/i, "");
 }
 
+function shouldStripStaticTableRows(relativeHtmlPath: string): boolean {
+  return (
+    relativeHtmlPath.includes("admin_booking_overview") ||
+    relativeHtmlPath.includes("admin_customer_directory")
+  );
+}
+
+function stripStaticTableRows(
+  bodyHtml: string,
+  relativeHtmlPath: string
+): string {
+  if (!shouldStripStaticTableRows(relativeHtmlPath)) {
+    return bodyHtml;
+  }
+
+  return bodyHtml.replace(
+    /<tbody([^>]*)>[\s\S]*?<\/tbody>/gi,
+    (_full, attrs) => `<tbody${attrs}></tbody>`
+  );
+}
+
 export const loadDesignDocument = cache(async (relativeHtmlPath: string, useAdminShell: boolean): Promise<DesignDocument> => {
   const absolutePath = path.join(process.cwd(), relativeHtmlPath);
   const html = await fs.readFile(absolutePath, "utf8");
   const { bodyClass, bodyHtml } = extractBody(html);
   const withoutStaticSidebar = useAdminShell ? stripEmbeddedSidebar(bodyHtml) : bodyHtml;
-  const rewrittenBodyHtml = rewriteAdminButtons(rewriteAdminAnchors(withoutStaticSidebar));
+  const withoutStaticRows = stripStaticTableRows(withoutStaticSidebar, relativeHtmlPath);
+  const rewrittenBodyHtml = rewriteAdminButtons(rewriteAdminAnchors(withoutStaticRows));
   const styles = extractStyles(html);
   const pageTitle = extractFirst(/<title>([\s\S]*?)<\/title>/i, html);
   const radiusOverrideCss = buildRadiusOverrideCss(html);
