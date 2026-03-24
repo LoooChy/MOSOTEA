@@ -89,6 +89,22 @@
         background: rgba(252, 249, 244, 0.8);
         backdrop-filter: blur(20px);
       }
+      @media (min-width: 1024px) {
+        [data-booking-summary-card="true"] {
+          position: sticky !important;
+          top: 128px !important;
+          max-height: calc(100vh - 148px);
+          overflow-y: auto;
+        }
+      }
+      @media (max-width: 1023.98px) {
+        [data-booking-summary-card="true"] {
+          position: static !important;
+          top: auto !important;
+          max-height: none;
+          overflow: visible;
+        }
+      }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
@@ -330,7 +346,7 @@
 </div>
 <!-- Right Column: Summary Sidebar -->
 <aside class="lg:col-span-4">
-<div class="sticky top-32 p-10 rounded-3xl bg-surface-container-low shadow-sm border border-outline-variant/10 space-y-10">
+<div class="sticky top-32 p-10 rounded-3xl bg-surface-container-low shadow-sm border border-outline-variant/10 space-y-10" data-booking-summary-card="true">
 <div>
 <h3 class="font-headline text-2xl text-primary mb-6">Reservation Summary</h3>
 <div class="space-y-6">

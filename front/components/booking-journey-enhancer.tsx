@@ -166,8 +166,12 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
     const summaryTitle = Array.from(document.querySelectorAll("h3")).find((node) =>
       /reservation summary/i.test(node.textContent ?? "")
     ) as HTMLElement | undefined;
-    const summaryRoot = summaryTitle?.closest(".sticky") as HTMLElement | null;
-    const summaryAside = summaryRoot?.closest("aside") as HTMLElement | null;
+    const summaryAside = summaryTitle?.closest("aside") as HTMLElement | null;
+    const summaryRoot =
+      (summaryTitle?.closest(".sticky, .relative.z-10, .rounded-3xl") as
+        | HTMLElement
+        | null) ??
+      (summaryAside?.firstElementChild as HTMLElement | null);
     const summaryRows = summaryRoot
       ? Array.from(summaryRoot.querySelectorAll("div.space-y-6 > div"))
       : [];
@@ -393,17 +397,11 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
         summaryRoot.style.top = `${topOffset}px`;
         summaryRoot.style.maxHeight = `calc(100vh - ${topOffset + 20}px)`;
         summaryRoot.style.overflowY = "auto";
-        if (summaryAside) {
-          summaryAside.style.alignSelf = "flex-start";
-        }
       } else {
-        summaryRoot.style.position = "";
+        summaryRoot.style.position = "static";
         summaryRoot.style.top = "";
         summaryRoot.style.maxHeight = "";
         summaryRoot.style.overflowY = "";
-        if (summaryAside) {
-          summaryAside.style.alignSelf = "";
-        }
       }
     };
 
