@@ -167,6 +167,7 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
       /reservation summary/i.test(node.textContent ?? "")
     ) as HTMLElement | undefined;
     const summaryRoot = summaryTitle?.closest(".sticky") as HTMLElement | null;
+    const summaryAside = summaryRoot?.closest("aside") as HTMLElement | null;
     const summaryRows = summaryRoot
       ? Array.from(summaryRoot.querySelectorAll("div.space-y-6 > div"))
       : [];
@@ -378,6 +379,31 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
         continueControl.href = `/booking/validate?experience=${selected}&date=${formatDateToken(
           selectedDate
         )}&time=${encodeURIComponent(selectedTime)}&guests=${selectedGuests}`;
+      }
+    };
+
+    const applySummarySticky = () => {
+      if (!summaryRoot) {
+        return;
+      }
+      const desktop = window.matchMedia("(min-width: 1024px)").matches;
+      if (desktop) {
+        const topOffset = 128;
+        summaryRoot.style.position = "sticky";
+        summaryRoot.style.top = `${topOffset}px`;
+        summaryRoot.style.maxHeight = `calc(100vh - ${topOffset + 20}px)`;
+        summaryRoot.style.overflowY = "auto";
+        if (summaryAside) {
+          summaryAside.style.alignSelf = "flex-start";
+        }
+      } else {
+        summaryRoot.style.position = "";
+        summaryRoot.style.top = "";
+        summaryRoot.style.maxHeight = "";
+        summaryRoot.style.overflowY = "";
+        if (summaryAside) {
+          summaryAside.style.alignSelf = "";
+        }
       }
     };
 
@@ -736,7 +762,9 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
     applySelection(selected);
     updateTimeSlotsVisual();
     renderDatePicker();
+    applySummarySticky();
     calendarContainer?.addEventListener("click", onCalendarClick);
+    window.addEventListener("resize", applySummarySticky);
 
     const timeClickHandlers = timeSlots.map((slot) => {
       const handler = () => {
@@ -796,6 +824,7 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
         slot.element.removeEventListener("click", handler);
       });
       calendarContainer?.removeEventListener("click", onCalendarClick);
+      window.removeEventListener("resize", applySummarySticky);
       changeControl?.removeEventListener("click", changeHandler);
       guestDecreaseButton?.removeEventListener("click", onDecreaseGuests);
       guestIncreaseButton?.removeEventListener("click", onIncreaseGuests);
