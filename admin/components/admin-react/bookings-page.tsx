@@ -342,7 +342,7 @@ export function BookingsPage() {
             <div className="px-6 py-5 border-b border-outline-variant/20">
               <h3 className="font-headline text-2xl text-primary">Edit Booked Guests</h3>
               <p className="text-sm text-on-surface-variant mt-2">
-                {editingItem.workshopType} ({editingItem.sessionId})
+                {editingItem.workshopType}
               </p>
             </div>
             <div className="px-6 py-6 space-y-3">
