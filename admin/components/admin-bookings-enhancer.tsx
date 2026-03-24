@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 type BookingStatus = "open" | "full" | "cancelled" | "completed";
@@ -271,7 +271,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
     setSelectedSessionId(sessionId && sessionId.trim().length > 0 ? sessionId.trim() : null);
   }, [isCustomerRoute, pathname]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isBookingsRoute) {
       return;
     }
@@ -587,7 +587,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
     };
   }, [bookingsError, isBookingsRoute, loadingBookings, upcomingItems]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isCustomerRoute) {
       return;
     }
@@ -727,7 +727,7 @@ export function AdminBookingsEnhancer({ pathname }: AdminBookingsEnhancerProps) 
     selectedSessionId,
   ]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isHistoryRoute) {
       return;
     }
