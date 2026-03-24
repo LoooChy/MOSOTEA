@@ -574,10 +574,6 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
               </button>
             </div>
           </div>
-          <div class="flex items-center space-x-6 text-[10px] uppercase tracking-[0.2em] font-label text-on-surface/40">
-            <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div> Selected</div>
-            <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full border border-primary/20 bg-primary/10"></div> Available</div>
-          </div>
         </div>
         <div class="grid grid-cols-7 gap-y-6">
           ${weekdays}
