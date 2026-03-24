@@ -395,8 +395,8 @@ export function BookingJourneyEnhancer({ enabled }: BookingJourneyEnhancerProps)
         const topOffset = 128;
         summaryRoot.style.position = "sticky";
         summaryRoot.style.top = `${topOffset}px`;
-        summaryRoot.style.maxHeight = `calc(100vh - ${topOffset + 20}px)`;
-        summaryRoot.style.overflowY = "auto";
+        summaryRoot.style.maxHeight = "";
+        summaryRoot.style.overflowY = "";
       } else {
         summaryRoot.style.position = "static";
         summaryRoot.style.top = "";
