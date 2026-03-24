@@ -189,7 +189,7 @@ export function BookingsPage() {
       <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
           <h2 className="font-headline text-4xl text-primary font-light tracking-tight mb-2">
-            Morning, Tea Master
+            Hi, Tea Master
           </h2>
           <p className="text-on-surface-variant font-body">
             The garden is quiet. Here is the ritual oversight for today.
